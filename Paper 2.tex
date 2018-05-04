@@ -1,0 +1,138 @@
+
+\documentclass[12pt,a4paper]{article}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{lipsum}
+\usepackage{authblk}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{booktabs, multicol, multirow}
+
+
+\pagestyle{fancy}
+\begin{document}
+
+%title and author details
+\title{
+Language, Job search and Labor market outcomes  \\
+\large Evidence from Immigrants in Germany }
+
+\author[1]{Huy Le-Quang}
+%\date{24--Oct--2017} %remove date
+\footnotetext[1] {Institute for Employment Research(IAB). Email: huy.le-quang@iab.de.
+
+I would like to thank Silke Anger and other colleagues at the Institute for Employment Research in Nuremberg for helpful comments and suggestions. Special thanks goes to Dr. Søren Wichmann for detailed instructions of calculating linguistic distance used in this study. I also gratefully acknowledge financial support from the Graduate School (GradAB) at the Institute for Employment Research . All remaining errors are my own. The views, opinions, findings and conclusions expressed in this article are strictly those of the author.}
+
+\maketitle
+
+\abstract{This paper investigates the impact of German language skills on labor market outcomes of immigrants in Germany by exploring the mediation effect of job search methods. I implement the potential outcomes framework to overcome the limitations of traditional linear structural equation models. Using a large representative migration sample in Germany, I show that better German language skills improve labor market performance. In particular, immigrants who speak the host-country language well are less likely to rely on their social networks to look for jobs, which in turn increases their earnings and level of job complexity. The mediation effect of job search accounts for approximately 15 percent of the total effect, which points to the importance of opening the black-box to explore how language skills exert their influence on labor market performance.
+} \\
+\textbf{Keywords}: language skills, job search, labor market outcomes, immigrants \\
+\textbf{JEL}: I26, J24, J30
+
+\newpage
+
+\section{Introduction}
+
+Since the early 1980s, a number of studies has emerged to explore the role of host-country language skills on labor market integration of immigrants. Language skills, as being a productive trait in itself, have significant direct effect on improving immigrants' labor market outcomes (Chiswick and Miller (2005, 2010...), Dustmann (...) and Isphording and Otten (2014). Besides this key role, language skills, especially at the beginning of migration, also facilitate early job search, consumption activities and the establishment of social networks (Chiswick and Miller, 2005). However, there have been limited attempts to open this black-box to investigate how and why language proficiency exerts its influence on labor market success of immigrants.
+
+This study fills the gap by exploring the pathway through which language proficiency affects current labor market performance of immigrants in Germany. I focus on pre-migration language skills because immigrants who master the national language at the very beginning of migration could immediately find better jobs and obtain an initial advantage which puts them well ahead of other immigrants who start learning the language after migration. Further, by focusing on pre-migration language skills, I am able to decompose the total impact of language skills into indirect impact through preferred job search channels and direct impact on subsequent labor market success.
+
+The empirical analysis utilizes a unique dataset on newly arrived immigrants to Germany, the IAB-SOEP Migration Sample (2013 - 2016). I answer two questions: (1) to what extent pre-migration language skills affect the use of social networks to find jobs, and (2) to what extent pre-migration language skills and the use of social networks to find jobs together affect current earnings and the level of job complexity.
+
+Traditionally, the mediation analysis is often implemented under the framework of linear structural equation modelling (LSEM) (MacKinnon, 2008). LSEM framework, however, cannot generalize to non-linear relationship in the mediation and outcomes equations (Imai et al., 2010). Hence, I implement the potential outcomes framework to accommodate for my binary mediator (using social networks to search for job) and my ordered outcome variable (the level of job complexity).
+
+Further problems often emerge in measuring the effect of language skills on labor market outcomes. First, self-assessed language skills are highly prone to measurement errors. Dustmann and van Soest (2001) show that more than half of the within-individual variation in language skills is due to measurement errors. This attentuation bias reduces the OLS estimate of language skill on labor market outcomes toward zero (Dustmann and van Soest, 2001, 2002; Isphording and Otten, 2014). Second, there might be unobserved heterogeneity affecting German language proficiency, preferred job search method and labor market outcomes such as ability, motivation and composition of social networks. These omitted variables result in upward bias of the language skill estimate. Therefore, the direction of bias of our estimates is \textit{a priori} not clear in this context.
+
+Third, the implementation of mediation analysis relies on two sequential ignorability assumptions (Imai et. al., 2010). First, given the observed pre-treatment confounders, the treatment assignment is assumed to be ignorable. As an observational study, this part of the assumption is not satisfied because individuals may self select into different levels of language proficiency. Second, the mediator is assumed ignorable given the observed treatment and pre-treatment confounders. This part of assumption may also not hold because the use of social network to search for job is not randomly assigned by the researcher.
+
+I propose several strategies to mitigate these problems. First, I include a full set of control variables to appropriately adjust for the observed difference between treatment and control groups \footnote{The treatment variable in this study is the level of German language proficiency, which is a continuous variable. So this sentence means that we have different groups with different levels of treatment.} to make the ignorability of treatment assignment more credible. This practice, unfortunately, does not rule out the possibility that the model still contains omitted variable bias. Second, I perform the sensitivity analysis to see how robust the empirical findings are to the violation of the sequential ignorability assumption. Third and most importantly, I interact the linguistic distance between German and the respective national language of an immigrant with his/her age at migration to create a proxy for his/her pre-migration German language proficiency. As the linguistic distance and the age at migration (of very young immigrants) are exogenous, this practice helps alleviate the problem of the non-randomness of self-assessed language skills.
+
+The empirical findings of this paper are as following. First, better pre--migration language skills reduce the probability of finding jobs using social networks by 10 percent. Second, using social networks to find jobs associates with roughly 7 percentage points lower wages, and 3 percent lower probability of working in jobs with highly complex tasks, probably due to the bad quality of the social network composition. Third, direct impact of pre-migration language skills on labor market outcomes accounts for roughly 85 percent, and the mediating impact of job search accounts for around 15 percent. These effect sizes are significant at 5 percent, which points to the importance of applying mediation analysis in understanding the impact of language proficiency on labor market success of immigrants.
+
+This research contributes to the existing literature in several ways. First, by focusing on the pre--migration language skills on the contemporary labor market performance of immigrants in Germany, we have an insight into the role of human capital formation in source countries. Second, using German context where there is a large diversity of immigrants from different linguistic backgrounds (Isphording and Otten, 2014), this paper attempts to open the black-box and explain why and how pre-migration language skills can have such an impact on subsequent labor market outcomes. Third, using the linguistic distance drawn from the Automatic Similarity Judgement Program (ASJP) to construct the proxy variable for language proficiency could mitigate the measurement error problem in self-assessed language skills.
+
+The remainder of the paper is organized as follows: Section 2 presents individual and country-level data. Section 3 formulates the estimation models. Section 4 reports and analyzes the impacts of pre--migration language skills on early job search and contemporary labor market outcomes. Finally, section 5 gives concluding remarks and proposes policy recommendations to improve the labor market success of immigrants in Germany.
+
+\section{Data}
+
+The IAB--SOEP Migration Sample is a household survey undertaken annually by the Institute for Employment Research (IAB) in Nuremberg and the German Socio-Economic Panel (SOEP) at German Institute for Economic Research (DIW Berlin). The first wave of the survey started in 2013 and covered 4,964 persons in 2,723 households. These are second-generation immigrants and immigrants who first appeared in administrative data from the German unemployment insurance in 1995 and are older than 16 years. Some countries of origin are given higher sampling probability to ensure sufficient observations such as immigrants from EU-New Member States and Southern European countries (Bruecker et al., 2014). This new dataset provides a large representative sample of migrants in Germany. With comprehensive information, it also provides new insights to various aspect of immigration such as migration history, education background and labor market performance (Bruecker et al., 2014).
+
+This paper only focus on immigrants who are from 25 to 64 years of age who are employed on full--time or regular part--time basis. I exclude immigrants in education, retirement, civil or military service and self-employment because of their irregular employment activities and unreliable wage information. Further, I restrict the sample to immigrants who did not come to Germany to conduct study or vocational training. These immigrants have to stay in their first jobs after migration so that I am able to follow them from the beginning of searching for jobs to working in the current jobs. The effective sample of analysis is 1,724 immigrants.
+
+\begin{center}
+[INSERT TABLE 1 HERE]
+\end{center}
+
+Table 1 presents summary statistics. First, there is a clear improvement in terms of fluency when we compare pre-migration with current language skills. In particular, while only 52 percent of immigrants coming to Germany already speaking the language well, up to 82 percent of immigrants assessing themselves to comprehend the language after approximately 14 years in Germany. The average age of immigrants is quite high (40 years old), and they have, in general, good health (91 percent of immigrants). Roughly half of these immigrants have foreign degrees and were employed before they came to Germany. In addition, the majority of immigrants works in medium and large establishment with up to 2000 workers. They work mostly in Manufacturing, Trade, Health and Education sectors. The highest proportion of immigrants comes from Eastern European countries.
+
+I employ the linguistic distance between German and the respective national language of an immigrant as an instrumental variable for the self-assessed language skills. The idea behind this approach is based on the fact that the efficiency of learning a language depends on \textit{how far or close} a person' mother tongue to a foreign language that the person wants to learn. The Max Planck Institute of Evolutionary Anthropology has quantified this distance based on the pronunciation of 40 most frequently used words in each language in the so--called Swadesh list. In this paper, I use the results from their Automatic Similarity Judgement Program (ASJP, version 2016). The result is presented in Figure 1. Overall, languages in East Asian countries such as China, Korea and Japan have the longest distance to German, and languages from neighboring countries such as the Netherlands, Switzerland and Luxembourg have the closest distance.
+
+\section{Empirical strategies}
+
+This section presents the methodology to investigate the effects of pre-migration language skills of immigrants on (1) successful job finding methods and (2) contemporary labor market success. The main identification strategy is the two-stage least squares (2SLS) with an instrumental variable (IV), however, I first estimate the model using Ordinary Least Squares (OLS) to serve as a baseline result as following
+$$y_{i}=\alpha_{0}+\alpha_{1}L_{i}+\alpha_{2}X'_{i}+\mu_{i}$$
+in which $y_{i}$ is either job finding methods or labor market outcomes, $L_{i}$ is the dummies for pre-migration language skills (1: speak German well; 0: do not speak German at all), $X_{i}$ contains all control variables, $\mu_{i}$ is the idiosyncratic error term. The problem with the OLS model is that the pre-migration language skills is an endogenous variable because of omitted variable bias or measurement error in survey data. Therefore, I use 2SLS model as following
+
+First stage:
+$$L_{i}=\delta_{0}+\delta_{1}LD_{i}+X'_{i}\gamma+\epsilon_{i}$$
+
+Second stage:
+$$y_{i}=\beta_{0}+\beta_{1}\hat{L_{i}}+X'_{i}\phi+\xi_{i}$$
+
+In the first stage, I regress $LD_{i}$ which measures the linguistic distance between German and the respective national language of an immigrant on pre-migration language skills. In the second stage, I used the predicted value of pre-migration language skills ($\hat{L_{i}}$) to regress on a range of job finding methods or labor market outcomes ($y_{i}$).
+
+
+\section{Findings and Discussion}
+In this section, I present empirical results from models in the above section. First, I analyze the effects of pre-migration language skills on early job finding methods, and then on labor market outcomes, in particular, earnings, job satisfaction, types of contracts and the probability of being overeducated in their jobs.
+
+\begin{center}
+[INSERT TABLE 2 HERE]
+\end{center}
+
+Table 2 reports the impacts of pre-migration language skills on first job finding methods in Germany. The OLS model predicts that a person who speaks German well before migration will have higher probability of finding job via private employment service and less likely to find job via social networks. The 2SLS model also predicts that a person comprehending the language upon arrival has 18.1 percent less likely to find job via social networks than a person who does not. That person also have higher probability to find job via public employment service (17 percent higher than a person not speaking German at all at arrival). Given that only 52 percent of immigrants speaking German well upon arrival, the Government should promote public employment services to accommodate also immigrants not mastering the language yet. I do not find significant effect of pre-migration language skills on private employment service and job advertisement. Additionally, Table 2 presents some interesting findings about other aspects of human capital. For instance, immigrants who have higher qualifications have significantly less probability to find job via informal networks as they are more likely to have access to formal information channels such as job advertisements on newspapers and the Internet. Immigrants who were previously employed in their home countries are also less likely to find job via social networks. On the contrary, immigrants who have foreign degrees are more likely to leverage on their social networks to find their first jobs in Germany.
+
+Linguistic distance proves to be a good instrument for language skills because it has significant negative correlation with German language skills and the F-statistic in the first stage regression is well above the threshold of 10.
+
+\begin{center}
+[INSERT TABLE 3 HERE]
+\end{center}
+
+I move to analyze the impact of German language skills upon arrival on a range of labor market outcomes without the mediating effect of job finding methods (reduced--form model) in Table 3 and with the mediating effect of job finding methods (full model) in Table 4. At a glance, pre-migration language skills have significant positive effects on labor market outcomes such as hourly earnings, job satisfaction and the probability of being overeducated. These effects are also much higher in 2SLS models than OLS models. In particular, an immigrant speaking good German have 47.7 percentage point higher hourly wages, 13.7 percent more likely to be satisfied with his job and 38.8 percent higher probability to be overeducated than a counterpart not speaking the language. Among these result, the finding of higher overeducation probability may sound non-intuitive. However, as I restrict the sample to all people who stay in their first jobs until now, higher probability of being overeducated can be explained quite obviously as follows. Immigrants who come to Germany having already spoken the language tend to find quickly a job without fully understand the requirements of the job, the relative match with their own qualifications or the labor market institutions in Germany. Since I do not observe anyone who changes jobs or employers in this sample, it is more likely that these immigrants are overeducated for their jobs.
+
+\begin{center}
+[INSERT TABLE 4 HERE]
+\end{center}
+
+In Table 4, I use job finding methods as additional control variables and assess their impacts on contemporary labor market outcomes. At the first glance, pre-migration language skills still maintain their significant impact on earnings, job satisfaction and overeducation risk with the same directions as in Table 3 even when I control for current language skills. Regarding job finding methods, I only find significant impact of social network on job satisfaction using both OLS and 2SLS. In particular, immigrants who found jobs via social networks have 24.4 percent less likelihood to have job satisfaction. If job satisfaction is a proxy for subjective job matching quality, immigrants who find jobs via social networks perceive themselves not well-matched to their jobs. Kalter (2006); Lancee (2010); Battu et al. (2011); Kanas et al. (2011); and Carlsson et al. (2014) also find similar result. Also in these models, linguistic distance has a significant negative correlation with pre-migration language skills and significant F-statistics in the first stage (from 14.74 to 18.14) rejects the hypothesis that it is a weak instrument.
+
+All in all, pre--migration language skills are particularly important to understand the job finding methods of immigrants in Germany. In addition, pre--migration language skills are also good predictors for current labor market outcomes such as hourly earnings, job satisfaction and overeducation risk.
+
+%\begin{table}[ht]
+%\caption{Pre-migration language skills and job finding methods}
+
+%\end{table}
+
+%\begin{table}[ht]
+%\caption{Pre-migration language skills and labor market performance (without Job finding channels)}
+
+%\end{table}
+
+%\begin{table}[ht]
+%\caption{Pre-migration language skills and labor market performance (with Job finding channels)}
+
+%\end{table}
+
+\section{Conclusions}
+
+Germany has a long tradition of immigration among European countries, but unlike the United States, Australia and Canada, policy makers in Germany are not well-prepared for the integration of the existing population of immigrants (Dustmann, Frattini and Lanzara, 2012). This paper contributes to the existing literature by investigating the effects of language skills upon arrival on early job search methods and contemporary labor market outcomes of immigrants in Germany. On the one hand, the research justifies the policy of using pre--defined language requirements to obtain visa entry in Germany. On the other hand, I show explicitly the importance of pre--migration language skills on successful labor market integration. Pre-migration language skills reduce the probability of using informal social networks to search for jobs, and increase access to other formal channels such as public/private employment services or job advertisement on mass media. Finding jobs via social networks is also shown to have negative impact on earnings and job satisfaction.
+
+The paper sheds light on a potential mechanism through which pre-migration language skills have an impact on current labor market performance. Thereby, the paper contributes to both strands of literature in labor market integration of immigrants: (1) job search behavior of immigrants and (2) the impact of job search channels on labor market performance. Understanding the job search process and the determinants for successful labor market integration is the key to design effective policies to improve labor market perspectives of immigrants in Germany.
+
+\end{document}
+
+
+
