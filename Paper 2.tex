@@ -5,11 +5,19 @@
 \usepackage{authblk}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{fancyhdr}
-\usepackage{graphicx}
+\usepackage{graphicx, subfigure}
 \usepackage{amsmath}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{booktabs, multicol, multirow}
+\usepackage{epstopdf}
+\usepackage{subfigure}
+\usepackage{xspace}
+\usepackage{ltablex}
+\usepackage[flushleft]{threeparttable}
+\usepackage{adjustbox}
+\usepackage{pdflscape}
+\usepackage{tabu}
 
 
 \pagestyle{fancy}
@@ -24,7 +32,7 @@ Language, Job search and Labor market outcomes  \\
 %\date{24--Oct--2017} %remove date
 \footnotetext[1] {Institute for Employment Research(IAB). Email: huy.le-quang@iab.de.
 
-I would like to thank Silke Anger and other colleagues at the Institute for Employment Research in Nuremberg for helpful comments and suggestions. Special thanks goes to Dr. Søren Wichmann for detailed instructions of calculating linguistic distance used in this study. I also gratefully acknowledge financial support from the Graduate School (GradAB) at the Institute for Employment Research . All remaining errors are my own. The views, opinions, findings and conclusions expressed in this article are strictly those of the author.}
+I would like to thank Silke Anger and other colleagues at the Institute for Employment Research in Nuremberg for helpful comments and suggestions. Special thanks goes to Dr. Soren Wichmann for detailed instructions of calculating linguistic distance used in this study. I also gratefully acknowledge financial support from the Graduate School (GradAB) at the Institute for Employment Research . All remaining errors are my own. The views, opinions, findings and conclusions expressed in this article are strictly those of the author.}
 
 \maketitle
 
@@ -47,7 +55,7 @@ Further problems often emerge in measuring the effect of language skills on labo
 
 Third, the implementation of a mediation analysis relies on two sequential ignorability assumptions (Imai et. al., 2010). First, given the observed pre-treatment confounders, the treatment assignment is assumed to be ignorable. As an observational study, this part of the assumption is not satisfied because individuals may self select into different levels of language proficiency. Second, the mediator is assumed ignorable given the observed treatment and pre-treatment confounders. This part of assumption may also not hold because the use of social network to search for job is not randomly assigned by the researcher.
 
-I propose several strategies to mitigate these problems. First, I include a full set of control variables to appropriately adjust for the observed difference between treatment and control groups \footnote{The treatment variable in this study is the level of German language proficiency, which is a continuous variable. So this sentence means that we have various groups with different levels of treatment.} to make the ignorability of treatment assignment more credible. This practice, unfortunately, does not rule out the possibility that the model still contains omitted variable bias. Second, I perform the sensitivity analysis to see how robust the empirical findings are to the violation of the sequential ignorability assumption. Third and most importantly, I interact the linguistic distance between German and the respective national language of an immigrant with his/her age at migration to create a proxy for his/her pre-migration German language proficiency. These two variables are strong determinants of language skills (Bleakly and Chin, 2004; Isphording, 2013). As the linguistic distance and the age at migration (of very young immigrants) are exogenous, this practice helps alleviate the problem of the non-randomness of self-assessed language skills.
+I propose several strategies to mitigate these problems. First, I include a full set of control variables to appropriately adjust for the observed difference between treatment and control groups \footnote {\tiny {The treatment variable in this study is the level of German language proficiency, which is a continuous variable. So this sentence means that we have various groups with different levels of treatment.}} to make the ignorability of treatment assignment more credible. This practice, unfortunately, does not rule out the possibility that the model still contains omitted variable bias. Second, I perform the sensitivity analysis to see how robust the empirical findings are to the violation of the sequential ignorability assumption. Third and most importantly, I interact the linguistic distance between German and the respective national language of an immigrant with his/her age at migration to create a proxy for his/her pre-migration German language proficiency. These two variables are strong determinants of language skills (Bleakly and Chin, 2004; Isphording, 2013). As the linguistic distance and the age at migration (of very young immigrants) are exogenous, this practice helps alleviate the problem of the non-randomness of self-assessed language skills.
 
 The empirical analysis utilizes a unique dataset on newly arrived immigrants to Germany, the IAB-SOEP Migration Sample (2013 - 2016) and has the following findings. First, better pre--migration language skills reduce the probability of finding jobs using social networks by 10 percent. Second, using social networks to find jobs associates with roughly 7 percentage points lower wages, and 3 percent lower probability of working in jobs with highly complex tasks, probably due to the bad quality of the social network composition. Third, direct effect of pre-migration language skills on labor market outcomes accounts for roughly 85 percent, and the mediating effect of job search accounts for around 15 percent. These effect sizes are significant at 5 percent, which points to the importance of applying mediation analysis in understanding the impact of language proficiency on labor market success of immigrants.
 
@@ -55,80 +63,288 @@ This research contributes to the existing literature in several ways. First, by 
 
 The remainder of the paper is organized as follows: Section 2 presents individual and country-level data. Section 3 formulates the estimation models. Section 4 reports and analyzes the impacts of pre--migration language skills on early job search and contemporary labor market outcomes. Finally, section 5 gives concluding remarks and proposes policy recommendations to improve the labor market success of immigrants in Germany.
 
-\section{Data}
+\section{Data and Sample restrictions}
 
 The IAB--SOEP Migration Sample is a household survey undertaken annually by the Institute for Employment Research (IAB) in Nuremberg and the German Socio-Economic Panel (SOEP) at German Institute for Economic Research (DIW Berlin). The first wave of the survey started in 2013 and covered 4,964 persons in 2,723 households. These are second-generation immigrants and immigrants who first appeared in administrative data from the German unemployment insurance in 1995 and are older than 16 years. Some countries of origin are given higher sampling probability to ensure sufficient observations such as immigrants from EU-New Member States and Southern European countries (Bruecker et al., 2014). This new dataset provides a large representative sample of migrants in Germany. With comprehensive information, it also provides new insights to various aspect of immigration such as migration history, education background and labor market performance (Bruecker et al., 2014).
 
-This paper only focus on immigrants who are from 25 to 64 years of age who are employed on full--time or regular part--time basis. I exclude immigrants in education, retirement, civil or military service and self-employment because of their irregular employment activities and unreliable wage information. Further, I restrict the sample to immigrants who did not come to Germany to conduct study or vocational training. These immigrants have to stay in their first jobs after migration so that I am able to follow them from the beginning of searching for jobs to working in the current jobs. The effective sample of analysis is 1,724 immigrants.
+This paper only focus on immigrants who are from 18 to 64 years of age who are employed on full--time or part--time basis. I exclude immigrants in education, retirement, civil or military service and self-employment because of their irregular employment activities and unreliable wage information. Further, I restrict the sample to immigrants who did not come to Germany to conduct study or vocational training. To explore the mediating role of using social networks to find job on contemporary labor market outcomes, I need the information of job search channels for the current jobs of all individuals. Unfortunately, the IAB-SOEP Migration Sample only provides information about the job search channels of the very first jobs after migration. This information limits the ability to consider immigrants who change their occupations. Therefore, I only consider immigrants who stay in their first jobs after migration so that I am able to follow them from the beginning of searching for jobs until working in the current jobs.
 
 \begin{center}
-[INSERT TABLE 1 HERE]
+[INSERT TABLE 1 ABOUT HERE]
 \end{center}
 
-Table 1 presents summary statistics. First, there is a clear improvement in terms of fluency when we compare pre-migration with current language skills. In particular, while only 52 percent of immigrants coming to Germany already speaking the language well, up to 82 percent of immigrants assessing themselves to comprehend the language after approximately 14 years in Germany. The average age of immigrants is quite high (40 years old), and they have, in general, good health (91 percent of immigrants). Roughly half of these immigrants have foreign degrees and were employed before they came to Germany. In addition, the majority of immigrants works in medium and large establishment with up to 2000 workers. They work mostly in Manufacturing, Trade, Health and Education sectors. The highest proportion of immigrants comes from Eastern European countries.
+Table 1 presents summary statistics. There are two measures of pre-migration language skills: the ordinal variable measures the the language fluency in the 1 - 5 scale (1: Not at all, 2: Poor, 3: Fair, 4: Good, 5: Very good), and the continuous variable as a result of the principle component analysis to extract information from three skills (speaking, writing and reading). The language skills at migration of immigrants in Germany are rather low and concentrated in the lower bound of the scale.
 
-I employ the linguistic distance between German and the respective national language of an immigrant as an instrumental variable for the self-assessed language skills. The idea behind this approach is based on the fact that the efficiency of learning a language depends on \textit{how far or close} a person' mother tongue to a foreign language that the person wants to learn. The Max Planck Institute of Evolutionary Anthropology has quantified this distance based on the pronunciation of 40 most frequently used words in each language in the so--called Swadesh list. In this paper, I use the results from their Automatic Similarity Judgement Program (ASJP, version 2016). The result is presented in Figure 1. Overall, languages in East Asian countries such as China, Korea and Japan have the longest distance to German, and languages from neighboring countries such as the Netherlands, Switzerland and Luxembourg have the closest distance.
+The average age and age at migration of immigrants is quite high (40 and 29 years old, respectively). More than half of these immigrants have only foreign degrees and were employed before they came to Germany, this reflects our sample restriction to immigrants who did not come to Germany to study. In addition, the majority of immigrants works in medium and large establishment with up to 2000 workers (66 percent). They work mostly in Service sector with approximately 60 percent. The highest proportion of immigrants comes from Eastern European countries.
+
+I employ the linguistic distance between German and the respective national language of an immigrant, and interact with his/her age at migration to create a proxy variable for the language proficiency of an immigrants. The idea behind this approach is based on the fact that the efficiency of learning a language depends on \textit{how far or close} a person' mother tongue to a foreign language that the person wants to learn, and on \textit{how young or old} a person starts to be exposed to the language. The Max Planck Institute of Evolutionary Anthropology has quantified this distance based on the pronunciation of 40 most frequently used words in each language in the so--called Swadesh list. In this paper, I use the results from their Automatic Similarity Judgement Program (ASJP, version 2016). The result is presented in Figure 1. Overall, languages in East Asian countries such as China, Korea and Japan have the longest distance to German, and languages from neighboring countries such as the Netherlands, Switzerland and Luxembourg have the closest distance.
 
 \section{Empirical strategies}
 
-This section presents the methodology to investigate the effects of pre-migration language skills of immigrants on (1) successful job finding methods and (2) contemporary labor market success. The main identification strategy is the two-stage least squares (2SLS) with an instrumental variable (IV), however, I first estimate the model using Ordinary Least Squares (OLS) to serve as a baseline result as following
-$$y_{i}=\alpha_{0}+\alpha_{1}L_{i}+\alpha_{2}X'_{i}+\mu_{i}$$
-in which $y_{i}$ is either job finding methods or labor market outcomes, $L_{i}$ is the dummies for pre-migration language skills (1: speak German well; 0: do not speak German at all), $X_{i}$ contains all control variables, $\mu_{i}$ is the idiosyncratic error term. The problem with the OLS model is that the pre-migration language skills is an endogenous variable because of omitted variable bias or measurement error in survey data. Therefore, I use 2SLS model as following
+This section presents the methodology to investigate the impact of pre-migration language skills of immigrants on (1) using social network to find the current jobs and (2) contemporary labor market success. First, consider the following set of equations:
 
-First stage:
-$$L_{i}=\delta_{0}+\delta_{1}LD_{i}+X'_{i}\gamma+\epsilon_{i}$$
+$$Y_{i} = \alpha_{1} + \beta_{1}L_{i} + \xi_{1}X_{i} + \epsilon_{i1} (1)$$
+$$M_{i} = \alpha_{2} + \beta_{2}L_{i} + \xi_{2}X_{i} + \epsilon_{i2} (2) $$
+$$Y_{i} = \alpha_{3} + \beta_{3}L_{i} + \gamma M_{i} + \xi_{3}X_{i} + \epsilon_{i3} (3)$$
 
-Second stage:
-$$y_{i}=\beta_{0}+\beta_{1}\hat{L_{i}}+X'_{i}\phi+\xi_{i}$$
+in which $Y_{i}$ is the labor market outcome which can be either natural logarithm of hourly wages or the level of job complexity, $L_{i}$ is the continuous measure of German language skills at migration, $M_{i}$ is the binary mediator (the use of social network to find current jobs), $X_{i}$ contains all control variables, $\epsilon_{i}$ is the idiosyncratic error terms. Traditionally, under the LSEM framework, $\hat \beta_{3}$ measures the direct effect of language skills on labor market outcomes, and $\hat \beta_{2}\hat \gamma$ measures the mediation effect of using social network to search for jobs on labor market outcomes. The total effect $\hat \beta_{1}$ equals the sum of $\hat \beta_{3} + \hat \beta_{2}\hat \gamma$, so equation 1 is redundant. 
 
-In the first stage, I regress $LD_{i}$ which measures the linguistic distance between German and the respective national language of an immigrant on pre-migration language skills. In the second stage, I used the predicted value of pre-migration language skills ($\hat{L_{i}}$) to regress on a range of job finding methods or labor market outcomes ($y_{i}$).
+As long as the linearity assumption holds, under the sequential ignorability and no-interaction assumption, the estimate of mediation effect based on the product of coefficients method is asymptotically consistent. However, as I have a binary mediator (using social networks to search for jobs or not) and an ordered outcome (level of job complexity in the scale from 1 to 4), the linearity assumption does not hold, and we have to apply another approach to accommodate for these non-linear relationships. This paper uses the potential outcomes framework in the spirit of Imai et al. (2010). In particular, I use probit model for equation (2) and linear regression for wages or ordered probit model for the level of job complexity in equation (3).
 
+The confidence interval for the mediation, direct and total effect is estimated using the nonparametric bootstrapping method.
 
 \section{Findings and Discussion}
-In this section, I present empirical results from models in the above section. First, I analyze the effects of pre-migration language skills on early job finding methods, and then on labor market outcomes, in particular, earnings, job satisfaction, types of contracts and the probability of being overeducated in their jobs.
+This section reports the findings from the mediation analysis. First, I show the relationship between language proficiency and the use of social networks to find jobs. Second, I show the relationship between language proficiency and the use of social networks to find jobs on two outcome variables, namely, the hourly earnings and the level of job complexity.
 
 \begin{center}
-[INSERT TABLE 2 HERE]
+[INSERT TABLE 2 ABOUT HERE]
 \end{center}
 
-Table 2 reports the impacts of pre-migration language skills on first job finding methods in Germany. The OLS model predicts that a person who speaks German well before migration will have higher probability of finding job via private employment service and less likely to find job via social networks. The 2SLS model also predicts that a person comprehending the language upon arrival has 18.1 percent less likely to find job via social networks than a person who does not. That person also have higher probability to find job via public employment service (17 percent higher than a person not speaking German at all at arrival). Given that only 52 percent of immigrants speaking German well upon arrival, the Government should promote public employment services to accommodate also immigrants not mastering the language yet. I do not find significant effect of pre-migration language skills on private employment service and job advertisement. Additionally, Table 2 presents some interesting findings about other aspects of human capital. For instance, immigrants who have higher qualifications have significantly less probability to find job via informal networks as they are more likely to have access to formal information channels such as job advertisements on newspapers and the Internet. Immigrants who were previously employed in their home countries are also less likely to find job via social networks. On the contrary, immigrants who have foreign degrees are more likely to leverage on their social networks to find their first jobs in Germany.
-
-Linguistic distance proves to be a good instrument for language skills because it has significant negative correlation with German language skills and the F-statistic in the first stage regression is well above the threshold of 10.
+Table 2 reports the impacts of pre-migration language skills on the use of social networks to find jobs in Germany. Better pre--migration language skills reduce the probability of finding jobs using social networks by 10 percent. Additionally, Table 2 presents some interesting findings about other aspects of human capital. For instance, immigrants who have higher qualifications have significantly less probability to find job via informal networks as they are more likely to have access to formal information channels such as job advertisements on newspapers and the Internet. Immigrants who were previously employed in their home countries are also less likely to find job via social networks. On the contrary, immigrants who have foreign degrees are more likely to leverage on their social networks to find their first jobs in Germany.
 
 \begin{center}
-[INSERT TABLE 3 HERE]
+[INSERT TABLE 3 ABOUT HERE]
 \end{center}
 
-I move to analyze the impact of German language skills upon arrival on a range of labor market outcomes without the mediating effect of job finding methods (reduced--form model) in Table 3 and with the mediating effect of job finding methods (full model) in Table 4. At a glance, pre-migration language skills have significant positive effects on labor market outcomes such as hourly earnings, job satisfaction and the probability of being overeducated. These effects are also much higher in 2SLS models than OLS models. In particular, an immigrant speaking good German have 47.7 percentage point higher hourly wages, 13.7 percent more likely to be satisfied with his job and 38.8 percent higher probability to be overeducated than a counterpart not speaking the language. Among these result, the finding of higher overeducation probability may sound non-intuitive. However, as I restrict the sample to all people who stay in their first jobs until now, higher probability of being overeducated can be explained quite obviously as follows. Immigrants who come to Germany having already spoken the language tend to find quickly a job without fully understand the requirements of the job, the relative match with their own qualifications or the labor market institutions in Germany. Since I do not observe anyone who changes jobs or employers in this sample, it is more likely that these immigrants are overeducated for their jobs.
+I move to analyze the impact of German language skills upon arrival on hourly wages with the mediating effect of using social networks to find jobs in Table 3 and on the level of job complexity in Table 4. Table 3 shows that using social networks to find jobs associates with roughly 7 percentage points lower wages.
 
 \begin{center}
-[INSERT TABLE 4 HERE]
+[INSERT TABLE 4 ABOUT HERE]
+\end{center}
+Table 4 shows that sing social networks to find jobs associates with 3 percent lower probability of working in jobs with highly complex tasks, probably due to the bad quality of the social network composition. 
+
+\begin{center}
+[INSERT FIGURE 4 AND 5 ABOUT HERE]
 \end{center}
 
-In Table 4, I use job finding methods as additional control variables and assess their impacts on contemporary labor market outcomes. At the first glance, pre-migration language skills still maintain their significant impact on earnings, job satisfaction and overeducation risk with the same directions as in Table 3 even when I control for current language skills. Regarding job finding methods, I only find significant impact of social network on job satisfaction using both OLS and 2SLS. In particular, immigrants who found jobs via social networks have 24.4 percent less likelihood to have job satisfaction. If job satisfaction is a proxy for subjective job matching quality, immigrants who find jobs via social networks perceive themselves not well-matched to their jobs. Kalter (2006); Lancee (2010); Battu et al. (2011); Kanas et al. (2011); and Carlsson et al. (2014) also find similar result. Also in these models, linguistic distance has a significant negative correlation with pre-migration language skills and significant F-statistics in the first stage (from 14.74 to 18.14) rejects the hypothesis that it is a weak instrument.
+Direct effect of pre-migration language skills on labor market outcomes accounts for roughly 85 percent, and the mediating effect of job search accounts for around 15 percent. These effect sizes are significant at 5 percent, which points to the importance of applying mediation analysis in understanding the impact of language proficiency on labor market success of immigrants. 
 
-All in all, pre--migration language skills are particularly important to understand the job finding methods of immigrants in Germany. In addition, pre--migration language skills are also good predictors for current labor market outcomes such as hourly earnings, job satisfaction and overeducation risk.
+All in all, pre--migration language skills are particularly important to understand the job search behavior of immigrants in Germany. In addition, pre--migration language skills are also good predictors for current labor market outcomes such as hourly earnings, and level of job complexity.
 
-%\begin{table}[ht]
-%\caption{Pre-migration language skills and job finding methods}
-
-%\end{table}
-
-%\begin{table}[ht]
-%\caption{Pre-migration language skills and labor market performance (without Job finding channels)}
-
-%\end{table}
-
-%\begin{table}[ht]
-%\caption{Pre-migration language skills and labor market performance (with Job finding channels)}
-
-%\end{table}
+\begin{center}
+[to be continued]
+\end{center} 
 
 \section{Conclusions}
 
-Germany has a long tradition of immigration among European countries, but unlike the United States, Australia and Canada, policy makers in Germany are not well-prepared for the integration of the existing population of immigrants (Dustmann, Frattini and Lanzara, 2012). This paper contributes to the existing literature by investigating the effects of language skills upon arrival on early job search methods and contemporary labor market outcomes of immigrants in Germany. On the one hand, the research justifies the policy of using pre--defined language requirements to obtain visa entry in Germany. On the other hand, I show explicitly the importance of pre--migration language skills on successful labor market integration. Pre-migration language skills reduce the probability of using informal social networks to search for jobs, and increase access to other formal channels such as public/private employment services or job advertisement on mass media. Finding jobs via social networks is also shown to have negative impact on earnings and job satisfaction.
+Germany has a long tradition of immigration among European countries, but unlike the United States, Australia and Canada, policy makers in Germany are not well-prepared for the integration of the existing population of immigrants (Dustmann, Frattini and Lanzara, 2012). This paper contributes to the existing literature by investigating the effects of language skills upon arrival on early job search methods and contemporary labor market outcomes of immigrants in Germany. Good pre-migration language skills reduce the probability of using informal social networks to search for jobs, and increase access to other formal channels such as public/private employment services or job advertisement on mass media. Finding jobs via social networks is also shown to have negative impact on earnings and level of job complexity.
 
 The paper sheds light on a potential mechanism through which pre-migration language skills have an impact on current labor market performance. Thereby, the paper contributes to both strands of literature in labor market integration of immigrants: (1) job search behavior of immigrants and (2) the impact of job search channels on labor market performance. Understanding the job search process and the determinants for successful labor market integration is the key to design effective policies to improve labor market perspectives of immigrants in Germany.
+
+\section{Appendix}
+\begin{center}
+% Table generated by Excel2LaTeX from sheet 'Summary statistics'
+\begin{table}[htbp]
+  \centering
+  \caption{Summary Statistics}
+\scalebox{0.8}{
+    \begin{tabular}{lrrrrr}
+    \toprule
+    \toprule
+    \multicolumn{1}{c}{\textbf{Variables}} & \multicolumn{1}{c}{\textbf{Mean}} & \multicolumn{1}{c}{\textbf{Std. Dev}} & \multicolumn{1}{c}{\textbf{Min}} & \multicolumn{1}{c}{\textbf{Max}} & \multicolumn{1}{c}{\textbf{Observations}} \\
+    \midrule
+    \textbf{Dependent variables} &       &       &       &       &  \\
+    Log(hourly wages) & 2.440 & 0.480 & 0.435 & 4.511 & 1,078 \\
+    Level of job complexity & 1.984 & 0.975 & 1     & 4     & 1,149 \\
+    \textbf{Mediator} &       &       &       &       &  \\
+    Social network (1/0) & 0.647 & 0.478 & 0     & 1     & 1,149 \\
+    \textbf{Independent variables} &       &       &       &       &  \\
+    Pre-migration German language skills (ordinal) & 2.082 & 1.310 & 1     & 5     & 1,149 \\
+    Pre-migration German language skills (factor analysis) & 0.000 & 1.000 & -1.066 & 1.474 & 1,149 \\
+    Linguistic distance & 93.079 & 7.769 & 0     & 102.510 & 1,149 \\
+    Age at migration & 29.066 & 11.270 & 0     & 57 & 1,149 \\
+    Log(Linguistic distance * Age at migration) & 7.760 & 0.766 & 0     & 8.639 & 1,149 \\
+    \textbf{Control variables} &       &       &       &       &  \\
+    Males (1/0) & 0.503 & 0.500 & 0     & 1     & 1,149 \\
+    Married (1/0) & 0.720 & 0.449 & 0     & 1     & 1,149 \\
+    Age   & 39.286 & 10.541 & 18    & 65    & 1,149 \\
+    Years since migration & 10.220 & 7.797 & 0     & 46    & 1,149 \\
+    Years of education & 11.274 & 2.345 & 7     & 18    & 1,149 \\
+    \multicolumn{1}{p{21.85em}}{Highest qualification (1= No, 2 = Secondary, 3 = Vocation, 4 = University)} & 2.904 & 0.902 & 1     & 4     & 1,149 \\
+    Only foreign degree (1/0) & 0.572 & 0.495 & 0     & 1     & 1,149 \\
+    Employed before migration (1/0) & 0.612 & 0.488 & 0     & 1     & 1,149 \\
+    Tenure & 6.375 & 6.067 & 0     & 42    & 1,149 \\
+    Establishment size (1= Large, 0 = Small) & 0.663 & 0.473 & 0     & 1     & 1,149 \\
+    \multicolumn{1}{p{21.85em}}{Industry (1= Agriculture, 2 = Manufacturing, 3 = Services)} & 2.488 & 0.696 & 1     & 3     & 1,149 \\
+    \multicolumn{1}{p{21.85em}}{Regions of settlement (1= NE, 2 = NW, 3 = S)} & 2.271 & 0.724 & 1     & 3     & 1,149 \\
+    Survey years & 2014.129 & 1.129 & 2013  & 2016  & 1,149 \\
+    \bottomrule
+    \end{tabular}%
+ }
+ \begin{tablenotes}
+      \small
+      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
+    \end{tablenotes}
+\end{table}%
+\end{center}
+
+% Table generated by Excel2LaTeX from sheet '20180504 Regression'
+\begin{table}[htbp]
+  \centering
+  \caption{Moderation equation - Language skills and the use of Social networks to search for jobs}
+\scalebox{0.8}{
+   \begin{tabular}{p{15em}rrrrr}
+    \toprule
+    \toprule
+    \multicolumn{1}{r}{} & \multicolumn{2}{p{9.55em}}{\textbf{Self-assessed language skills}} &       & \multicolumn{2}{p{11.55em}}{\textbf{Linguistic distance * Age at Migration}} \\
+\cmidrule{2-3}\cmidrule{5-6}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} &       & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
+    \midrule
+    \multicolumn{1}{l}{\textit{Dep. Var: Use Social networks to search for jobs (1/0)}} &       &       &       &       &  \\
+    Pre-migration language skills & -0.097*** & -0.093*** &       & 0.079*** & 0.074** \\
+                              & (0.022) & (0.022) &       & (0.027) & (0.034) \\
+    Male  &       & 0.012 &       &       & 0.004 \\
+    \multicolumn{1}{r}{} &       & (0.041) &       &       & (0.041) \\
+    Age at migration &       & 0.005** &       &       & 0.001 \\
+                              &       & (0.002) &       &       & (0.002) \\
+    \textbf{Qualification} &       &       &       &       &  \\
+    No qualification &       & Ref   &       &       & Ref \\
+    Secondary school &       & -0.037 &       &       & -0.064 \\
+                              &       & (0.086) &       &       & (0.087) \\
+    Vocational training &       & -0.164* &       &       & -0.211** \\
+                              &       & (0.093) &       &       & (0.094) \\
+    University &       & -0.203** &       &       & -0.268*** \\
+                              &       & (0.100) &       &       & (0.099) \\
+    Only Foreign degree (Yes) &       & 0.071 &       &       & 0.075 \\
+    \multicolumn{1}{r}{} &       & (0.061) &       &       & (0.061) \\
+    Employed before migration (Yes) &       & -0.048 &       &       & -0.061 \\
+    \multicolumn{1}{r}{} &       & (0.046) &       &       & (0.046) \\
+    \textbf{Industry} &       &       &       &       &  \\
+    Agriculture &       & Ref   &       &       & Ref \\
+    Manufacturing &       & -0.003 &       &       & 0.006 \\
+    \multicolumn{1}{r}{} &       & (0.066) &       &       & (0.067) \\
+    Services &       & -0.034 &       &       & -0.029 \\
+    \multicolumn{1}{r}{} &       & (0.058) &       &       & (0.060) \\
+    \multicolumn{1}{l}{Pseudo-R squared} & 0.024 & 0.051 &       & 0.012 & 0.036 \\
+    Observations &       1,149    &        1,149    &       &            1,149    &            1,149    \\
+    \bottomrule
+    \end{tabular}%
+}
+
+\begin{tablenotes}
+      \small
+      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
+      \item Notes: Dependent variable: Use social networks to find current jobs (1/0). Sample of individuals aged 18 to 65, having full-time or part-time employment, stayed in their first jobs in Germany. Average Marginal Effects after probit regression are reported in this table. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, models (2) and (4)  include dummies for regions of settlement and dummies for survey years.
+    \end{tablenotes}
+\end{table}%
+
+% Table generated by Excel2LaTeX from sheet '20180504 Regression'
+\begin{table}[htbp]
+  \centering
+  \caption{Outcome equation - Impact of language skills and social networks as a job search channel on Earnings}
+\scalebox{0.8}{
+    \begin{tabular}{p{15em}rrrrr}
+    \toprule
+    \toprule
+    \multicolumn{1}{r}{} & \multicolumn{2}{p{9.55em}}{\textbf{Self-assessed language skills}} &       & \multicolumn{2}{p{11.55em}}{\textbf{Linguistic distance * Age at Migration}} \\
+\cmidrule{2-3}\cmidrule{5-6}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} &       & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
+    \midrule
+    \multicolumn{1}{r}{} &       &       &       &       &  \\
+    \multicolumn{1}{l}{Find job by social networks} & -0.075* & -0.064* &       & -0.094** & -0.071* \\
+    \multicolumn{1}{l}{                         } & (0.040) & (0.034) &       & (0.043) & (0.041) \\
+    Pre-migration language skills & 0.077*** & 0.040** &       & -0.022 & -0.046* \\
+    \multicolumn{1}{l}{                         } & (0.023) & (0.019) &       & (0.020) & (0.028) \\
+    Male  &       & 0.145*** &       &       & 0.148*** \\
+    \multicolumn{1}{l}{                         } &       & (0.036) &       &       & (0.036) \\
+    \multicolumn{1}{l}{Age} &       & 0.018* &       &       & 0.023** \\
+    \multicolumn{1}{l}{                         } &       & (0.009) &       &       & (0.009) \\
+    \multicolumn{1}{l}{Year since migration} &       & -0.012* &       &       & -0.013** \\
+    \multicolumn{1}{l}{                         } &       & (0.007) &       &       & (0.006) \\
+    \textbf{Qualification} &       &       &       &       &  \\
+    No qualification &       & Ref      &       &       & Ref  \\
+    Secondary school &       & -0.023 &       &       & -0.011 \\
+                              &       & (0.072) &       &       & (0.062) \\
+    Vocational training &       & 0.039 &       &       & 0.055 \\
+                              &       & (0.069) &       &       & (0.065) \\
+    University &       & 0.344*** &       &       & 0.368*** \\
+    \multicolumn{1}{l}{                         } &       & (0.078) &       &       & (0.067) \\
+    \multicolumn{1}{l}{Tenure} &       & 0.025*** &       &       & 0.024*** \\
+    \multicolumn{1}{l}{                         } &       & (0.008) &       &       & (0.007) \\
+    \multicolumn{1}{l}{Establishment size (Large)} &       & 0.148*** &       &       & 0.152*** \\
+    \multicolumn{1}{l}{                         } &       & (0.032) &       &       & (0.035) \\
+    \multicolumn{1}{l}{Constant                 } & 2.517*** & 1.670*** &       & 2.673*** & 1.871*** \\
+    \multicolumn{1}{l}{                         } & (0.033) & (0.221) &       & (0.139) & (0.242) \\
+    \multicolumn{1}{l}{R-squared} & 0.027 & 0.317 &       & 0.011 & 0.315 \\
+    Observations &       1,078    &        1,078    &       &            1,078    &            1,078    \\
+    \bottomrule
+    \end{tabular}%
+}
+
+\begin{tablenotes}
+      \small
+      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
+      \item Notes: Dependent variable: Natural logarithm of hourly earnings . Sample of individuals aged 18 to 65, having full-time or part-time employment, stayed in their first jobs in Germany. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, models (2) and (4) include age squared, years since migration squared, tenure squared, dummies for industries, dummies for regions of settlement and dummies for survey years.
+    \end{tablenotes}
+\end{table}%
+
+\begin{landscape}
+% Table generated by Excel2LaTeX from sheet '20180504 Regression'
+\begin{table}[htbp]
+  \centering
+  \caption{Outcome equation - Level of job complexity}
+    \begin{tabular}{p{15em}rrrrrrrrr}
+    \toprule
+    \toprule
+    \multicolumn{1}{r}{} & \multicolumn{4}{c}{\textbf{Self-assessed language skills}} &       & \multicolumn{4}{c}{\textbf{Linguistic distance * Age at Migration}} \\
+\cmidrule{2-5}\cmidrule{7-10}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{\textit{Level 1}} & \multicolumn{1}{c}{\textit{Level 2}} & \multicolumn{1}{c}{\textit{Level 3}} & \multicolumn{1}{c}{\textit{Level 4}} &       & \multicolumn{1}{c}{\textit{Level 1}} & \multicolumn{1}{c}{\textit{Level 2}} & \multicolumn{1}{c}{\textit{Level 3}} & \multicolumn{1}{c}{\textit{Level 4}} \\
+    \midrule
+    \multicolumn{1}{l}{Find job by social networks} & 0 .054** & -0.016** & -0.007* & -0.031** &       &  0.060* &  -0.017* &  -0.008 &  -0.034* \\
+    \multicolumn{1}{l}{                         } & (0.027) & (0.008) & (0.004) & (0.015) &       & (0.035) & (0.009) & (0.005) & (0.021) \\
+    Pre-migration language skills & -0.040** & 0.012** & 0.005** & 0.023** &       &  0.057*** &  -0.017*** &  -0.008*** &  -0.033*** \\
+    \multicolumn{1}{l}{                         } & (0.017) & (0.005) & (0.002) & (0.009) &       & (0.017) & (0.005) & (0.002) & (0.009) \\
+    \multicolumn{1}{l}{Pseudo-R-squared} & 0.203 & 0.203 & 0.203 & 0.203 &       & 0.203 & 0.203 & 0.203 & 0.203 \\
+    Observations &        1,149    &        1,149    &        1,149    &        1,149    &       &         1,149    &         1,149    &         1,149    &         1,149    \\
+    \bottomrule
+    \end{tabular}%
+\begin{tablenotes}
+      \small
+      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
+      \item Notes: Dependent variable: Level of Job complexity (1/4) . Sample of individuals aged 18 to 65, having full-time or part-time employment, stayed in their first jobs in Germany. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, all models include dummy for males, age, age squared, years since migration, years since migration squared, dummies for highest qualifications, tenure squared, dummy for establishment size, dummies for industries, dummies for regions of settlement and dummies for survey years.
+    \end{tablenotes}
+\end{table}%
+
+\end{landscape}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=1.2]{Figure7}
+\caption{Linguistic distance between German and other languages}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=0.8]{Figure1}
+\caption{Linguistic distance, Language skills and the use of Social Networks to find jobs}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=0.8]{Figure2}
+\caption{Language skills, the use of Social Networks to find jobs and Wages}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=1.2]{Figure3}
+\caption{Total effects of language skills on wages decomposed}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=1.2]{Figure4}
+\caption{Total effects of language skills on level of job complexity decomposed}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=1.2]{Figure5}
+\caption{Sensitivity analysis - Outcome: log(hourly wages)}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=1.2]{Figure6}
+\caption{Sensitivity analysis - Outcome: Level of job complexity}
+\end{figure}
 
 \end{document}
 
