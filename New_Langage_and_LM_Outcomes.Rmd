@@ -1,0 +1,288 @@
+---
+title: "Language and LM Outcomes"
+author: "Huy Le Quang"
+date: "2 Mai 2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning =  FALSE)
+```
+
+## Description
+
+This paper focuses on the mediating effect of job search to explain why and how language skills can affect labor market outcomes of immigrants in Germany.
+
+## 1. Call necessary packages
+
+```{r cars}
+library(AER)
+library(ggplot2)
+library(readstata13)
+library(mediation)
+library(sandwich)
+library(nlme)
+library(margins)
+library(MASS)
+library(Hmisc)
+library(reshape2)
+library(effects)
+library(sjPlot)
+```
+
+## 2. Set working directory and load dataset
+
+```{r}
+setwd("U:/Paper 2/")
+data.analysis <- read.dta13("data4.dta")
+```
+
+## 3. Mediation analysis of language skills on Wages
+
+```{r}
+na.omit(data.analysis) ## omit missing variables
+
+## a. Restricted model
+
+med.fit1 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), social_network ~ z_german_bf, family = binomial("probit")) ## Mediation equation
+print(summary(med.fit1), digits=3)
+
+out.fit1 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), ln_wage ~ social_network + z_german_bf) ## Outcome equation
+print(summary(out.fit1), digits=3)
+
+med.out1 <- mediate(med.fit1, out.fit1, treat = "z_german_bf", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out1) ## (Note: the product of two negative numbers is positive)
+
+
+
+## b. Unrestricted model
+
+med.fit2 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              social_network ~ z_german_bf+ sex + migage + qual_dum2 + qual_dum3 + qual_dum4 + 
+                foreign_degree + employed_bf + sector_dum2 + sector_dum3 + 
+                state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4, family = binomial("probit")) ## mediation equation
+print(summary(med.fit2), digits=3)
+
+out.fit2 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              ln_wage ~ social_network + z_german_bf + sex + age + age2 + migyear + migyear2 + 
+                qual_dum2 + qual_dum3 + qual_dum4 + tenure + tenure2 + establishment + 
+                sector_dum2 + sector_dum3 + state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4) ## outcome equation
+print(summary(out.fit2), digits=3)
+
+med.out2 <- mediate(med.fit2, out.fit2, treat = "z_german_bf", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out2)
+
+## Plot
+par(mfrow = c(1,2))
+plot(med.out1, main = "Restricted model")
+plot(med.out2, main = "Unrestricted model")
+par(mfrow = c(1,1))
+
+## Sensitivity analysis
+# sens.out1 <- medsens(med.out1, rho.by = 0.1, effect.type = "indirect")
+# summary(sens.out1)
+
+sens.out2 <- medsens(med.out2, rho.by = 0.1, effect.type = "indirect")
+summary(sens.out2)
+
+#par(mfrow = c(1,2))
+# plot(sens.out1, sens.par = "rho", main = "Restricted model", ylim = c(-0.07,0.09))
+
+# plot(sens.out2, sens.par = "rho", main = "Social networks", ylim = c(-0.07,0.07))
+
+```
+
+## 4. Mediation analysis of linguistic distance on Wages
+
+```{r}
+## a. Restricted model
+
+med.fit3 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), social_network ~ ldXmigage, family = binomial("probit")) ## Mediation equation
+print(summary(med.fit3), digits=2)
+
+out.fit3 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), ln_wage ~ social_network + ldXmigage) ## Outcome equation
+print(summary(out.fit3), digits=2)
+
+med.out3 <- mediate(med.fit3, out.fit3, treat = "ldXmigage", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out3) 
+
+
+
+## b. Unrestricted model
+
+med.fit4 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              social_network ~ ldXmigage + sex + migage + qual_dum2 + qual_dum3 + qual_dum4 + 
+                foreign_degree + employed_bf + sector_dum2 + sector_dum3 + 
+                state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4, family = binomial("probit")) ## mediation equation
+print(summary(med.fit4), digits=2)
+
+out.fit4 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              ln_wage ~ social_network + ldXmigage + sex + age + age2 + migyear + migyear2 + 
+                qual_dum2 + qual_dum3 + qual_dum4 + tenure + tenure2 + establishment + 
+                sector_dum2 + sector_dum3 + state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4) ## outcome equation
+print(summary(out.fit4), digits=3)
+
+med.out4 <- mediate(med.fit4, out.fit4, treat = "ldXmigage", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out4)
+
+## Plot
+par(mfrow = c(1,2))
+plot(med.out3, main = "Restricted model")
+plot(med.out4, main = "Unrestricted model")
+par(mfrow = c(1,1))
+
+## Sensitivity analysis
+
+# sens.out3 <- medsens(med.out3, rho.by = 0.1, effect.type = "indirect")
+# summary(sens.out3)
+
+sens.out4 <- medsens(med.out4, rho.by = 0.1, effect.type = "indirect")
+summary(sens.out4)
+
+
+# plot(sens.out3, sens.par = "rho", main = "Restricted model", ylim = c(-0.007,0.007))
+
+# plot(sens.out4, sens.par = "rho", main = "Social network", ylim = c(-0.007,0.007))
+```
+
+## 5. Mediation analysis of language skills on Job levels
+```{r}
+## a. Restricted model
+
+med.fit5 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), social_network ~ z_german_bf, family = binomial("probit")) ## Mediation equation
+print(summary(med.fit5), digits=3)
+
+out.fit5 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), job_level ~ social_network + z_german_bf) ## Outcome equation
+print(summary(out.fit5), digits=3)
+
+
+med.out5 <- mediate(med.fit5, out.fit5, treat = "z_german_bf", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out5) ## (Note: the product of two negative numbers is positive)
+
+
+
+## b. Unrestricted model
+
+med.fit6 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              social_network ~ z_german_bf+ sex + migage + qual_dum2 + qual_dum3 + qual_dum4 + 
+                foreign_degree + employed_bf + sector_dum2 + sector_dum3 + 
+                state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4, family = binomial("probit")) ## mediation equation
+print(summary(med.fit6), digits=3)
+
+out.fit6 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              job_level ~ social_network + z_german_bf + sex + age + age2 + migyear + migyear2 + 
+                qual_dum2 + qual_dum3 + qual_dum4 + tenure + tenure2 + establishment + 
+                sector_dum2 + sector_dum3 + state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4) ## outcome equation
+print(summary(out.fit6), digits=3)
+
+med.out6 <- mediate(med.fit6, out.fit6, treat = "z_german_bf", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out6)
+
+## Plot
+par(mfrow = c(1,2))
+plot(med.out5, main = "Restricted model")
+plot(med.out6, main = "Unrestricted model")
+par(mfrow = c(1,1))
+
+## Sensitivity analysis
+
+# sens.out1 <- medsens(med.out1, rho.by = 0.1, effect.type = "indirect")
+# summary(sens.out1)
+
+sens.out6 <- medsens(med.out6, rho.by = 0.1, effect.type = "indirect")
+summary(sens.out6)
+
+# par(mfrow = c(1,2))
+# plot(sens.out1, sens.par = "rho", main = "Social_network (Restricted model)", ylim = c(-0.007,0.007))
+
+# plot(sens.out6, sens.par = "rho", main = "Social network", ylim = c(-0.1,0.15))
+
+```
+
+## 6. Mediation analysis of linguistic distance on Job levels
+
+```{r}
+## a. Restricted model
+
+med.fit7 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), social_network ~ ldXmigage, family = binomial("probit")) ## Mediation equation
+print(summary(med.fit7), digits=3)
+
+out.fit7 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), job_level ~ social_network + ldXmigage) ## Outcome equation
+print(summary(out.fit7), digits=3)
+
+med.out7 <- mediate(med.fit7, out.fit7, treat = "ldXmigage", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out7) 
+
+
+
+## b. Unrestricted model
+
+med.fit8 <- glm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              social_network ~ ldXmigage + sex + migage + qual_dum2 + qual_dum3 + qual_dum4 + 
+                foreign_degree + employed_bf + sector_dum2 + sector_dum3 + 
+                state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4, family = binomial("probit")) ## mediation equation
+print(summary(med.fit8), digits=3)
+
+out.fit8 <- lm(data = subset(data.analysis, same_job==1, na.action = na.exclude), 
+              job_level ~ social_network + ldXmigage + sex + age + age2 + migyear + migyear2 + 
+                qual_dum2 + qual_dum3 + qual_dum4 + tenure + tenure2 + establishment + 
+                sector_dum2 + sector_dum3 + state_dum2 + state_dum3 + syear_dum2 + syear_dum3 + syear_dum4) ## outcome equation
+print(summary(out.fit8), digits=3)
+
+med.out8 <- mediate(med.fit8, out.fit8, treat = "ldXmigage", mediator = "social_network", boot = TRUE, dropobs = TRUE)
+
+summary(med.out8)
+
+## Plot
+par(mfrow = c(1,2))
+plot(med.out7, main = "Restricted model")
+plot(med.out8, main = "Unrestricted model")
+par(mfrow = c(1,1))
+
+## Sensitivity analysis
+
+# sens.out1 <- medsens(med.out1, rho.by = 0.1, effect.type = "indirect")
+# summary(sens.out1)
+
+sens.out8 <- medsens(med.out8, rho.by = 0.1, effect.type = "indirect")
+summary(sens.out8)
+
+# par(mfrow = c(1,2))
+# plot(sens.out1, sens.par = "rho", main = "Social_network (Restricted model)", ylim = c(-0.007,0.007))
+
+# plot(sens.out8, sens.par = "rho", main = "Social network", ylim = c(-0.015,0.01))
+
+```
+## 7. Graphs
+```{r}
+# Log wages and social network
+ggplot(data = subset(data.analysis, same_job==1), aes(social_network, ln_wage, colour = social_network)) + geom_boxplot(show.legend = F) + facet_wrap(~social_network) + labs(x = "Use social networks to find jobs", y = "log(hourly wages)", title = "Use of social network to find job and Wages", caption = "Source: IAB-SOEP Migration Sample (2013-2016), own calculation") 
+
+# Language skills and social networks
+ggplot(data = subset(data.analysis, same_job==1), aes(z_german_bf, social_network)) + stat_smooth(method = "loess",
+            formula = y ~ x,
+            size = 1,
+            show.legend = F)
+
+ggplot(data = subset(data.analysis, same_job==1), aes(linguistic, z_german_bf)) + stat_smooth(method = "loess",
+            formula = y ~ x,
+            size = 1,
+            show.legend = F)
+
+
+to.analysis <- subset(data.analysis, same_job==1)
+lo <- loess(social_network ~ z_german_bf, data = subset(data.analysis, same_job==1))
+plot(x,y)
+lines(predict(lo), col='red', lwd=2)
+```
+
+
