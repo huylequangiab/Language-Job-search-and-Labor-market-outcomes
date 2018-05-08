@@ -66,23 +66,31 @@ The remainder of the paper is organized as follows: Section 2 presents individua
 
 The IAB--SOEP Migration Sample is a household survey undertaken annually by the Institute for Employment Research (IAB) in Nuremberg and the German Socio-Economic Panel (SOEP) at German Institute for Economic Research (DIW Berlin). The first wave of the survey started in 2013 and covered 4,964 persons in 2,723 households. These are second-generation immigrants and immigrants who first appeared in administrative data from the German unemployment insurance in 1995 and are older than 16 years. Some countries of origin are given higher sampling probability to ensure sufficient observations such as immigrants from EU-New Member States and Southern European countries (Bruecker et al., 2014). This new dataset provides a large representative sample of migrants in Germany. With comprehensive information, it also provides new insights to various aspect of immigration such as migration history, education background and labor market performance (Bruecker et al., 2014).
 
-This paper only focus on immigrants who are from 18 to 64 years of age who are employed on full--time or part--time basis. I exclude immigrants in education, retirement, civil or military service and self-employment because of their irregular employment activities and unreliable wage information. Further, I restrict the sample to immigrants who first migrated to Germany when they are at least 18 years of age, and did not conduct study or vocational training. This restriction is necessary to omit immigrants who are born in Germany, or migrated to Germany as children because the language fluency at the time of migration and at the time of job search could be very different. More importantly, to explore the mediating role of using social networks to find jobs on contemporary labor market outcomes, I need the information of job search channels for the current jobs of all individuals. Unfortunately, the IAB-SOEP Migration Sample only provides information about the job search channels of the very first jobs obtained after migration (Dustmann et al., 2016). This information limits the ability to consider immigrants who change their occupations. Therefore, I only consider immigrants who stay in their first jobs after migration so that I am able to follow them from the beginning of searching for jobs until working in the current jobs. 
+This paper only focuses on immigrants who are from 18 to 64 years of age who are employed on full--time or part--time basis. I exclude immigrants in education, retirement, civil or military service and self-employment because of their irregular employment activities and unreliable wage information. Further, I restrict the sample to immigrants who first migrated to Germany when they are at least 18 years of age, and did not conduct study or vocational training. This restriction is necessary to omit immigrants who are born in Germany, or migrated to Germany as children because the language fluency at the time of migration and at the time of job search could be very different. More importantly, to explore the mediating role of using social networks to obtain jobs on contemporary labor market outcomes, I need the information of job search channels for the current jobs of all individuals. Unfortunately, the IAB-SOEP Migration Sample only provides information about the job search channels of the very first jobs obtained after migration (Dustmann et al., 2016). This information limits the ability to consider immigrants who change their occupations. Therefore, I only consider immigrants who stay in their first jobs after migration so that I am able to follow them from the beginning of searching for jobs until working in the current jobs. 
 
-The sample of analysis consists of xxx immigrants. Labor, family, refugees, regions of origin....%
+The sample of analysis consists of 965 immigrants in the wage sample and 1,008 immigrants in the level of job complexity sample. I split the whole sample of analysis into two sub-samples to be more transparent due to 43 missing cases of wages. The empirical results shown below are actually similar between these two sub-samples. As I omit immigrants who came to Germany to study or conduct vocational training, there are only three types of immigrants: Labor migrants (49.20 percent), Family reunion (34.94 percent), and Refugees or Asylum seekers (15.86 percent). These immigrants mainly come from Eastern Europe (71.82 percent), 10.34 percent from Southern Europe, roughly 5 percent from Turkey, and 13.31 percent come from the rest of the world. As the IAB-SOEP Migration Sample focuses on the newly arrived immigrants, more than 98 percent in my final sample came to Germany after 1990, and only 2 percent came during the post-war period (1945) until 1989. The characteristics of the sample are important because the following empirical results should be interpreted with these features in mind.
 
 \subsection{Variables}
 \textbf{Dependent Variables} \\
-I consider two labor market outcome variables in this research. First, the natural logarithm of hourly wages measures the financial rewards to language fluency and the use of social networks to find jobs. I convert weekly wages to hourly wages based on the actual number of working hours per week, and deflate the results to the base year in 2010. Second, the level of job complexity is used as a proxy for the quality of jobs. In particular, I extract the requirement levels of jobs according to the German Classification of Occupations 2010 (\textit{Klassification der Berufe - KldB 2010}). There are four levels of job requirement as follows: (1) Unskilled or semi-skilled activities (no vocational qualification required), (2) Specialist activities (at least two years of vocational training), (3) Complex specialist activities (master craftsman or technician with technical school qualification), and (4) Highly complex activities (completed university studies of at least four years). \\
+I consider two labor market outcome variables in this research. First, the natural logarithm of hourly wages measures the financial rewards to language fluency and the use of social networks to obtain jobs. I convert weekly wages to hourly wages based on the actual number of working hours per week, and deflate the results to the base year in 2010. Second, the level of job complexity is used as a proxy for the quality of jobs. In particular, I extract the last digit as the required levels of jobs according to the German Classification of Occupations 2010 (\textit{Klassifikation der Berufe - KldB 2010}). There are four levels of job requirement as follows: (1) Unskilled or semi-skilled activities (no vocational qualification required), (2) Specialist activities (at least two years of vocational training), (3) Complex specialist activities (master craftsman or technician with technical school qualification), and (4) Highly complex activities (completed university studies of at least four years). 
 
-\textbf{Mediator Variable}
-The mediator variable in this research is the use of social network to obtain the first job after migration to Germany. As only immigrants who stay in their first jobs after migration remain in our sample, this is also the job search method for these immigrants' current jobs. The IAB-SOEP Migration sample includes a number of choices to search for jobs: (1) public employment services, (2) private employment services, (3) job advertisements on public media and (4) personal social networks (friends, family, and business partners from home countries). I generate a dummy variable for using social networks to obtain current jobs which equals to 1 if Yes and 0 otherwise. One immigrant can use multiple job search channels to search for jobs, however, there should be only one realized method that results in the current job. I consider only personal social network because in our sample, more than 65 percent of immigrants indicate that this is their channel of getting current jobs. Due to the limited number of observations, generating a dichotomy indicating the use of social networks to obtain current jobs is better than considering several different job search methods. \\
+\begin{flushleft}
+\textbf{Mediator Variable} 
+\end{flushleft}
 
-\textbf{Independent Variables}
-To measure the pre-migration language fluency of immigrants in Germany, I use the self-assessed language skills and the interaction of the linguistic distance between German and a respective mother tongue of an immigrants with his/her age at arrival to Germany. First, the IAB-SOEP Migration Sample includes three questions to ask about the language skills of immigrants at the very beginning of their migration (the so-called pre-migration language skills) with respect to speaking, writing and reading skills. Immigrants self-assessed these skills on the scale of 1-5 (1: Not all all, 2: Poor, 3: Fair, 4: Good, 5: Very good). I use Principal Component Analysis (PCA) where a single latent component (overall German language skills at migration) is captured by seeking a linear combinations of variables (Speaking, Writing, Reading skills) such that the maximum variance is extracted from these variables. Table 1 presents the factor loading or the correlation coefficients between three original variables and the principal component. All three skills are highly correlated with one another and contribute roughly the same to a single latent factor. The resulting prediction of this PCA is a new composite German language proficiency which captures characteristics of all three individual skills, and is standardized to reflect z-score. In other words, the new German language proficiency variable has mean 0 and standard deviation 1. This is our variable of interest, and I will use this variable as a benchmark for comparison with the proxy variable presented below.
+The mediator variable in this research is the use of social network to obtain the first job after migration to Germany. As only immigrants who stay in their first jobs after migration remain in our sample, this is also the job search method for these immigrants' current jobs. The IAB-SOEP Migration sample includes a number of choices to search for jobs: (1) public employment services, (2) private employment services, (3) job advertisements on public media and (4) personal social networks (friends, family, and business partners from home countries). I generate a dummy variable for using social networks to obtain current jobs which equals to 1 if Yes and 0 otherwise. One immigrant can use multiple job search channels to search for jobs, however, there should be only one realized method that results in the current job. I consider only personal social network because in our sample, more than 65 percent of immigrants indicate that this is their channel of getting current jobs. Due to the limited number of observations, generating a dichotomy indicating the use of social networks to obtain current jobs is better than considering several different job search methods. 
 
-Second, I create a proxy variable
+\begin{flushleft}
+\textbf{Independent Variables} 
+\end{flushleft}
 
-\textbf{Control Variables}
+To measure the pre-migration language fluency of immigrants in Germany, I use non-simultaneously two proxy variables: (1) the self-assessed language skills and (2) the interaction of the linguistic distance between German and a respective mother tongue of an immigrants with his/her age at arrival to Germany. First, the IAB-SOEP Migration Sample includes three questions to ask about the language skills of immigrants at the very beginning of their migration (the so-called pre-migration language skills) with respect to speaking, writing and reading skills. Immigrants self-assessed these skills on the scale of 1-5 (1: Not all all, 2: Poor, 3: Fair, 4: Good, 5: Very good). I use Principal Component Analysis (PCA) where a single latent component (overall German language skills at migration) is captured by seeking a linear combinations of variables (Speaking, Writing, Reading skills) such that the maximum variance is extracted from these variables (Jolliffe, 2002). Table 1 presents the factor loadings or the correlation coefficients between three original variables and the principal component. All three skills are highly correlated with one another and contribute roughly the same to the single latent factor. The resulting prediction of this PCA is a new composite German language proficiency which captures characteristics of all three individual skills, and is standardized to reflect z-score. In other words, the new German language proficiency variable has mean 0 and standard deviation 1. This is our variable of interest, and I will use this variable as a benchmark for comparison with the proxy variable presented below.
+
+Second, the linguistic distance between German and a respective national language of an immigrants is interacted with his/her age at migration to Germany. I drawn the linguistic distance from the ASJP conducted by the Marx Planck Institute of Anthropology
+
+\begin{flushleft}
+\textbf{Control Variables} 
+\end{flushleft}
 
 \begin{center}
 [INSERT TABLE 1 ABOUT HERE]
@@ -97,10 +105,10 @@ I employ the linguistic distance between German and the respective national lang
 \section{Empirical strategies}
 
 This section presents the methodology to investigate the impact of pre-migration language skills of immigrants on (1) using social network to find the current jobs and (2) contemporary labor market success. First, consider the following set of equations:
-
+$$
 \begin{cases} Y_{i} = \alpha_{1} + \beta_{1}L_{i} + \xi_{1}X_{i} + \epsilon_{i1} (1) \\ M_{i} = \alpha_{2} + \beta_{2}L_{i} + \xi_{2}X_{i} + \epsilon_{i2} (2) \\ Y_{i} = \alpha_{3} + \beta_{3}L_{i} + \gamma M_{i} + \xi_{3}X_{i} + \epsilon_{i3} (3)
 \end{cases}
-
+$$
 in which $Y_{i}$ is the labor market outcome which can be either natural logarithm of hourly wages or the level of job complexity, $L_{i}$ is the continuous measure of German language skills at migration, $M_{i}$ is the binary mediator (the use of social network to find current jobs), $X_{i}$ contains all control variables, $\epsilon_{i}$ is the idiosyncratic error terms. Traditionally, under the LSEM framework, $\hat \beta_{3}$ measures the direct effect of language skills on labor market outcomes, and $\hat \beta_{2}\hat \gamma$ measures the mediation effect of using social network to search for jobs on labor market outcomes. The total effect $\hat \beta_{1}$ equals the sum of $\hat \beta_{3} + \hat \beta_{2}\hat \gamma$, so equation 1 is redundant. 
 
 As long as the linearity assumption holds, under the sequential ignorability and no-interaction assumption, the estimate of mediation effect based on the product of coefficients method is asymptotically consistent. However, as I have a binary mediator (using social networks to search for jobs or not) and an ordered outcome (level of job complexity in the scale from 1 to 4), the linearity assumption does not hold, and we have to apply another approach to accommodate for these non-linear relationships. This paper uses the potential outcomes framework in the spirit of Imai et al. (2010). In particular, I use probit model for equation (2) and linear regression for wages or ordered probit model for the level of job complexity in equation (3).
@@ -146,90 +154,102 @@ Germany has a long tradition of immigration among European countries, but unlike
 The paper sheds light on a potential mechanism through which pre-migration language skills have an impact on current labor market performance. Thereby, the paper contributes to both strands of literature in labor market integration of immigrants: (1) job search behavior of immigrants and (2) the impact of job search channels on labor market performance. Understanding the job search process and the determinants for successful labor market integration is the key to design effective policies to improve labor market perspectives of immigrants in Germany.
 
 \section{Appendix}
+
+% Table generated by Excel2LaTeX from sheet 'Summary statistics'
+\begin{table}[htbp]
+  \centering
+  \caption{Factor loadings (pattern matrix) and unique variances}
+\begin{center}
+    \begin{tabular}{lrr}
+    \toprule
+    \multicolumn{1}{c}{\textbf{Variable}} & \multicolumn{1}{c}{\textbf{German language skills}} & \multicolumn{1}{c}{\textbf{Uniqueness}} \\
+    Speaking & 0.9596 & 0.0792 \\
+    Writing & 0.9795 & 0.0406 \\
+    Reading & 0.9796 & 0.0403 \\
+    \bottomrule
+    \end{tabular}%
+\end{center}
+\begin{tablenotes}
+      \small
+      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
+      \item Notes: Observations = 1,008. Sample of individuals aged 20 to 65, having full-time or part-time employment, stayed in their first jobs after migration to Germany.  Method: Principle Component Analysis. Column 2 shows the factor loadings, which are the weights and correlations between each variable and the factor. Column 3 shows  the variance that is ‘unique’ to the variable and not shared with other variables.
+    \end{tablenotes}
+\end{table}%
+
+
 \begin{center}
 % Table generated by Excel2LaTeX from sheet 'Summary statistics'
 \begin{table}[htbp]
   \centering
   \caption{Summary Statistics}
-\scalebox{0.8}{
-    \begin{tabular}{lrrrrr}
+\scalebox{0.75}{
+    \begin{tabular}{lrrrrrrrrr}
     \toprule
-    \toprule
-    \multicolumn{1}{c}{\textbf{Variables}} & \multicolumn{1}{c}{\textbf{Mean}} & \multicolumn{1}{c}{\textbf{Std. Dev}} & \multicolumn{1}{c}{\textbf{Min}} & \multicolumn{1}{c}{\textbf{Max}} & \multicolumn{1}{c}{\textbf{Observations}} \\
+          & \multicolumn{4}{c}{\textbf{Wage sample}} &       & \multicolumn{4}{p{16.6em}}{\textbf{Level of job complexity sample}} \\
+\cmidrule{2-5}\cmidrule{7-10}    \multicolumn{1}{c}{\textbf{Variables}} & \multicolumn{1}{c}{\textbf{Mean}} & \multicolumn{1}{c}{\textbf{SD}} & \multicolumn{1}{c}{\textbf{Min}} & \multicolumn{1}{c}{\textbf{Max}} &       & \multicolumn{1}{c}{\textbf{Mean}} & \multicolumn{1}{c}{\textbf{SD}} & \multicolumn{1}{c}{\textbf{Min}} & \multicolumn{1}{c}{\textbf{Max}} \\
     \midrule
-    \textbf{Dependent variables} &       &       &       &       &  \\
-    Log(hourly wages) & 2.440 & 0.480 & 0.435 & 4.511 & 1,078 \\
-    Level of job complexity & 1.984 & 0.975 & 1     & 4     & 1,149 \\
-    \textbf{Mediator} &       &       &       &       &  \\
-    Social network (1/0) & 0.647 & 0.478 & 0     & 1     & 1,149 \\
-    \textbf{Independent variables} &       &       &       &       &  \\
-    Pre-migration German language skills (ordinal) & 2.082 & 1.310 & 1     & 5     & 1,149 \\
-    Pre-migration German language skills (factor analysis) & 0.000 & 1.000 & -1.066 & 1.474 & 1,149 \\
-    Linguistic distance & 93.079 & 7.769 & 0     & 102.510 & 1,149 \\
-    Age at migration & 29.066 & 11.270 & 0     & 57 & 1,149 \\
-    Log(Linguistic distance * Age at migration) & 7.760 & 0.766 & 0     & 8.639 & 1,149 \\
-    \textbf{Control variables} &       &       &       &       &  \\
-    Males (1/0) & 0.503 & 0.500 & 0     & 1     & 1,149 \\
-    Married (1/0) & 0.720 & 0.449 & 0     & 1     & 1,149 \\
-    Age   & 39.286 & 10.541 & 18    & 65    & 1,149 \\
-    Years since migration & 10.220 & 7.797 & 0     & 46    & 1,149 \\
-    Years of education & 11.274 & 2.345 & 7     & 18    & 1,149 \\
-    \multicolumn{1}{p{21.85em}}{Highest qualification (1= No, 2 = Secondary, 3 = Vocation, 4 = University)} & 2.904 & 0.902 & 1     & 4     & 1,149 \\
-    Only foreign degree (1/0) & 0.572 & 0.495 & 0     & 1     & 1,149 \\
-    Employed before migration (1/0) & 0.612 & 0.488 & 0     & 1     & 1,149 \\
-    Tenure & 6.375 & 6.067 & 0     & 42    & 1,149 \\
-    Establishment size (1= Large, 0 = Small) & 0.663 & 0.473 & 0     & 1     & 1,149 \\
-    \multicolumn{1}{p{21.85em}}{Industry (1= Agriculture, 2 = Manufacturing, 3 = Services)} & 2.488 & 0.696 & 1     & 3     & 1,149 \\
-    \multicolumn{1}{p{21.85em}}{Regions of settlement (1= NE, 2 = NW, 3 = S)} & 2.271 & 0.724 & 1     & 3     & 1,149 \\
-    Survey years & 2014.129 & 1.129 & 2013  & 2016  & 1,149 \\
+    \textbf{Dependent variables} &       &       &       &       &       &       &       &       &  \\
+    Log(hourly wages) & 2.452 & 0.468 & 0.742 & 5.541 &       &       &       &       &  \\
+    Level of job complexity &       &       &       &       &       & 1.965 & 1.028 & 1     & 4 \\
+    \textbf{Mediator} &       &       &       &       &       &       &       &       &  \\
+    Social network (1/0) & 0.653 & 0.476 & 0     & 1     &       & 0.654 & 0.476 & 0     & 1 \\
+    \textbf{Independent variables} &       &       &       &       &       &       &       &       &  \\
+    Pre-migration German language skills & 0 & 1 & -0.821 & 2.568 &       & 0 & 1 & -0.821 & 2.568 \\
+    Linguistic distance & 92.814 & 7.431 & 0     & 102.510 &       & 92.813 & 7.412 & 0     & 102.510 \\
+    Age at migration & 32.376 & 8.592 & 18    & 57    &       & 32.422 & 8.650 & 18    & 57 \\
+    ln(Linguistic distance * Age at migration) & 0.173 & 1.051 & -3.584 & 3.474 &       & 0.179 & 1.058 & -3.584 & 3.474 \\
+    \textbf{Control variables} &       &       &       &       &       &       &       &       &  \\
+    Males (1/0) & 0.504 & 0.500 & 0     & 1     &       & 0.499 & 0.500 & 0     & 1 \\
+    Age   & 41.16 & 10.050 & 20    & 65    &       & 41.31 & 10.128 & 20    & 65 \\
+    Years since migration & 8.779 & 6.612 & 0     & 42    &       & 8.887 & 6.669 & 0     & 42 \\
+    Years of education & 11.408 & 2.344 & 7     & 18    &       & 11.388 & 2.368 & 7     & 18 \\
+    \multicolumn{1}{p{19.7em}}{Highest qualification (1= No, 2 = Secondary, 3 = Vocation, 4 = University)} & 2.985 & 0.896 & 1     & 4     &       & 2.974 & 0.906 & 1     & 4 \\
+    Employed before migration (1/0) & 0.750 & 0.433 & 0     & 1     &       & 0.746 & 0.435 & 0     & 1 \\
+    Tenure & 6.148 & 5.579 & 0     & 39.20 &       & 6.154 & 5.551 & 0     & 39.20 \\
+    Establishment size (1= Large, 0 = Small) & 0.655 & 0.476 & 0     & 1     &       & 0.649 & 0.478 & 0     & 1 \\
+    \multicolumn{1}{p{19.7em}}{Industry (1= Agriculture, 2 = Manufacturing, 3 = Services)} & 2.477 & 0.726 & 1     & 3     &       & 2.490 & 0.719 & 1     & 3 \\
+    \multicolumn{1}{p{19.7em}}{Federal States (1/16)} & 6.888 & 4.345 & 1     & 16     &       & 6.877 & 4.346 & 1     & 16 \\
+    \midrule
+    Observations & 965   &       &       &       &       &      1,008    &       &       &  \\
     \bottomrule
     \end{tabular}%
- }
+}
  \begin{tablenotes}
       \small
-      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
+      \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016). 
+      \item Note: Sample of individuals aged 20 to 65, having full-time or part-time employment, stayed in their first jobs after migration to Germany. 
     \end{tablenotes}
 \end{table}%
 \end{center}
 
-% Table generated by Excel2LaTeX from sheet '20180504 Regression'
+
+ % Table generated by Excel2LaTeX from sheet '20180508 Regression'
 \begin{table}[htbp]
   \centering
-  \caption{Moderation equation - Language skills and the use of Social networks to search for jobs}
+  \caption{Moderation equation - Language skills and the use of Social networks to obtain jobs}
 \scalebox{0.8}{
-   \begin{tabular}{p{15em}rrrrr}
+    \begin{tabular}{p{8.65em}rrrrr}
     \toprule
-    \toprule
-    \multicolumn{1}{r}{} & \multicolumn{2}{p{9.55em}}{\textbf{Self-assessed language skills}} &       & \multicolumn{2}{p{11.55em}}{\textbf{Linguistic distance * Age at Migration}} \\
-\cmidrule{2-3}\cmidrule{5-6}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} &       & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
+    \multicolumn{1}{r}{} & \multicolumn{2}{p{9.1em}}{\textbf{Self-assessed language skills}} &       & \multicolumn{2}{p{9.45em}}{\textbf{Linguistic distance * Age at Migration}} \\
+\cmidrule{2-3}\cmidrule{5-6}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{Wage Sample} & \multicolumn{1}{p{4.2em}}{Job complexity sample} &       & \multicolumn{1}{c}{Wage Sample} & \multicolumn{1}{p{4.55em}}{Job complexity sample} \\
     \midrule
     \multicolumn{1}{l}{\textit{Dep. Var: Use Social networks to search for jobs (1/0)}} &       &       &       &       &  \\
-    Pre-migration language skills & -0.097*** & -0.093*** &       & 0.079*** & 0.074** \\
-                              & (0.022) & (0.022) &       & (0.027) & (0.034) \\
-    Male  &       & 0.012 &       &       & 0.004 \\
-    \multicolumn{1}{r}{} &       & (0.041) &       &       & (0.041) \\
-    Age at migration &       & 0.005** &       &       & 0.001 \\
-                              &       & (0.002) &       &       & (0.002) \\
-    \textbf{Qualification} &       &       &       &       &  \\
-    No qualification &       & Ref   &       &       & Ref \\
-    Secondary school &       & -0.037 &       &       & -0.064 \\
-                              &       & (0.086) &       &       & (0.087) \\
-    Vocational training &       & -0.164* &       &       & -0.211** \\
-                              &       & (0.093) &       &       & (0.094) \\
-    University &       & -0.203** &       &       & -0.268*** \\
-                              &       & (0.100) &       &       & (0.099) \\
-    Only Foreign degree (Yes) &       & 0.071 &       &       & 0.075 \\
-    \multicolumn{1}{r}{} &       & (0.061) &       &       & (0.061) \\
-    Employed before migration (Yes) &       & -0.048 &       &       & -0.061 \\
-    \multicolumn{1}{r}{} &       & (0.046) &       &       & (0.046) \\
+     \multicolumn{1}{l}{Pre-migration language skills} & -0.083*** & -0.084*** &       & 0.159** & 0.151** \\
+    \multicolumn{1}{l}{                         } & (0.020) & (0.020) &       & (0.063) & (0.060) \\
+    Male  & 0.017 & 0.036 &       & 0.02  & 0.039 \\
+    \multicolumn{1}{r}{} & (0.045) & (0.046) &       & (0.046) & (0.046) \\
+    Age at migration & 0.006** & 0.006** &       &  &  \\
+    \multicolumn{1}{l}{                         } & (0.002) & (0.002) &       &  &  \\
+    \multicolumn{1}{l}{Employed before migration} & -0.092* & -0.090* &       & -0.097* & -0.098* \\
+    \multicolumn{1}{r}{} & (0.049) & (0.050) &       & (0.050) & (0.050) \\
     \textbf{Industry} &       &       &       &       &  \\
-    Agriculture &       & Ref   &       &       & Ref \\
-    Manufacturing &       & -0.003 &       &       & 0.006 \\
-    \multicolumn{1}{r}{} &       & (0.066) &       &       & (0.067) \\
-    Services &       & -0.034 &       &       & -0.029 \\
-    \multicolumn{1}{r}{} &       & (0.058) &       &       & (0.060) \\
-    \multicolumn{1}{l}{Pseudo-R squared} & 0.024 & 0.051 &       & 0.012 & 0.036 \\
-    Observations &       1,149    &        1,149    &       &            1,149    &            1,149    \\
+    Agriculture & Ref   & Ref   &       & Ref   & Ref \\
+    Manufacturing & -0.055 & -0.076 &       & -0.092 & -0.11 \\
+    \multicolumn{1}{r}{} & (0.072) & (0.073) &       & (0.072) & (0.072) \\
+    Services & -0.064 & -0.071 &       & -0.098 & -0.102 \\
+    \multicolumn{1}{l}{                         } & (0.063) & (0.065) &       & (0.063) & (0.065) \\
+    \multicolumn{1}{l}{Pseudo R-squared} & 0.092 & 0.088 &       & 0.073 & 0.068 \\
+    Observations &            965    &      1,008    &       &   965    &        1,008    \\
     \bottomrule
     \end{tabular}%
 }
@@ -237,115 +257,120 @@ The paper sheds light on a potential mechanism through which pre-migration langu
 \begin{tablenotes}
       \small
       \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
-      \item Notes: Dependent variable: Use social networks to find current jobs (1/0). Sample of individuals aged 18 to 65, having full-time or part-time employment, stayed in their first jobs in Germany. Average Marginal Effects after probit regression are reported in this table. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, models (2) and (4)  include dummies for regions of settlement and dummies for survey years.
+      \item Notes: Dependent variable: Use social networks to find current jobs (1/0). Sample of individuals aged 20 to 65, having full-time or part-time employment, stayed in their first jobs after migration to Germany. Average Marginal Effects after probit regression are reported in this table. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, models (2) and (4)  include dummies for Federal States and dummies for survey years.
     \end{tablenotes}
 \end{table}%
 
-% Table generated by Excel2LaTeX from sheet '20180504 Regression'
+% Table generated by Excel2LaTeX from sheet '20180508 Regression'
 \begin{table}[htbp]
   \centering
-  \caption{Outcome equation - Impact of language skills and social networks as a job search channel on Earnings}
-\scalebox{0.8}{
-    \begin{tabular}{p{15em}rrrrr}
+  \caption{Outcome equation - Impact of language skills and job search method on Earnings}
+\scalebox{0.76}{
+    \begin{tabular}{lrrrrr}
     \toprule
-    \toprule
-    \multicolumn{1}{r}{} & \multicolumn{2}{p{9.55em}}{\textbf{Self-assessed language skills}} &       & \multicolumn{2}{p{11.55em}}{\textbf{Linguistic distance * Age at Migration}} \\
-\cmidrule{2-3}\cmidrule{5-6}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} &       & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
+          & \multicolumn{2}{p{9.1em}}{\textbf{Self-assessed language skills}} &       & \multicolumn{2}{p{9.45em}}{\textbf{Linguistic distance * Age at Migration}} \\
+\cmidrule{2-3}\cmidrule{5-6}          & \multicolumn{1}{c}{(1)} & \multicolumn{1}{c}{(2)} &       & \multicolumn{1}{c}{(3)} & \multicolumn{1}{c}{(4)} \\
     \midrule
-    \multicolumn{1}{r}{} &       &       &       &       &  \\
-    \multicolumn{1}{l}{Find job by social networks} & -0.075* & -0.064* &       & -0.094** & -0.071* \\
-    \multicolumn{1}{l}{                         } & (0.040) & (0.034) &       & (0.043) & (0.041) \\
-    Pre-migration language skills & 0.077*** & 0.040** &       & -0.022 & -0.046* \\
-    \multicolumn{1}{l}{                         } & (0.023) & (0.019) &       & (0.020) & (0.028) \\
-    Male  &       & 0.145*** &       &       & 0.148*** \\
-    \multicolumn{1}{l}{                         } &       & (0.036) &       &       & (0.036) \\
-    \multicolumn{1}{l}{Age} &       & 0.018* &       &       & 0.023** \\
-    \multicolumn{1}{l}{                         } &       & (0.009) &       &       & (0.009) \\
-    \multicolumn{1}{l}{Year since migration} &       & -0.012* &       &       & -0.013** \\
-    \multicolumn{1}{l}{                         } &       & (0.007) &       &       & (0.006) \\
-    \textbf{Qualification} &       &       &       &       &  \\
-    No qualification &       & Ref      &       &       & Ref  \\
-    Secondary school &       & -0.023 &       &       & -0.011 \\
-                              &       & (0.072) &       &       & (0.062) \\
-    Vocational training &       & 0.039 &       &       & 0.055 \\
-                              &       & (0.069) &       &       & (0.065) \\
-    University &       & 0.344*** &       &       & 0.368*** \\
-    \multicolumn{1}{l}{                         } &       & (0.078) &       &       & (0.067) \\
-    \multicolumn{1}{l}{Tenure} &       & 0.025*** &       &       & 0.024*** \\
-    \multicolumn{1}{l}{                         } &       & (0.008) &       &       & (0.007) \\
-    \multicolumn{1}{l}{Establishment size (Large)} &       & 0.148*** &       &       & 0.152*** \\
-    \multicolumn{1}{l}{                         } &       & (0.032) &       &       & (0.035) \\
-    \multicolumn{1}{l}{Constant                 } & 2.517*** & 1.670*** &       & 2.673*** & 1.871*** \\
-    \multicolumn{1}{l}{                         } & (0.033) & (0.221) &       & (0.139) & (0.242) \\
-    \multicolumn{1}{l}{R-squared} & 0.027 & 0.317 &       & 0.011 & 0.315 \\
-    Observations &       1,078    &        1,078    &       &            1,078    &            1,078    \\
+    \textit{Dep. Var: Natural logarithm of hourly wages} &       &       &       &       &  \\
+    \multicolumn{1}{p{14em}}{Obtain job by social networks} & -0.089* & -0.074** &       & -0.105** & -0.080** \\
+                              & (0.045) & (0.037) &       & (0.044) & (0.037) \\
+    \multicolumn{1}{p{14em}}{Pre-migration language skills} & 0.072*** & 0.038** &       & -0.066*** & -0.127* \\
+                              & (0.020) & (0.015) &       & (0.016) & (0.077) \\
+    \multicolumn{1}{p{8.65em}}{Male} &       & 0.114*** &       &       & 0.112*** \\
+                              &       & (0.035) &       &       & (0.035) \\
+    Age   &       & 0.029** &       &       & 0.045*** \\
+                              &       & (0.011) &       &       & (0.016) \\
+    Year since migration &       & 0.023*** &       &       & 0.038*** \\
+                              &       & (0.008) &       &       & (0.012) \\
+    \multicolumn{1}{p{8.65em}}{\textbf{Qualification}} &       &       &       &       &  \\
+    \multicolumn{1}{p{8.65em}}{No qualification} &       & Ref   &       &       & Ref \\
+    \multicolumn{1}{p{8.65em}}{Secondary school} &       & 0.055 &       &       & 0.06 \\
+    \multicolumn{1}{p{8.65em}}{                         } &       & (0.065) &       &       & (0.065) \\
+    \multicolumn{1}{p{8.65em}}{Vocational training} &       & 0.065 &       &       & 0.073 \\
+    \multicolumn{1}{p{8.65em}}{                         } &       & (0.065) &       &       & (0.065) \\
+    \multicolumn{1}{p{8.65em}}{University} &       & 0.423*** &       &       & 0.434*** \\
+                              &       & (0.071) &       &       & (0.070) \\
+    Tenure &       & 0.038*** &       &       & 0.038*** \\
+                              &       & (0.009) &       &       & (0.009) \\
+    \multicolumn{1}{p{14em}}{Establishment (Large)} &       & 0.117*** &       &       & 0.119*** \\
+                              &       & (0.033) &       &       & (0.034) \\
+    \multicolumn{1}{p{8.65em}}{\textbf{Industry}} &       &       &       &       &  \\
+    \multicolumn{1}{p{8.65em}}{Agriculture} &       & Ref   &       &       & Ref \\
+    \multicolumn{1}{p{8.65em}}{Manufacturing} &       & 0.179*** &       &       & 0.188*** \\
+          &       & (0.047) &       &       & (0.048) \\
+    \multicolumn{1}{p{8.65em}}{Services} &       & 0.069 &       &       & 0.078* \\
+                              &       & (0.044) &       &       & (0.044) \\
+    Constant                  & 2.510*** & 1.585*** &       & 2.532*** & 1.065** \\
+                              & (0.037) & (0.257) &       & (0.036) & (0.436) \\
+    N                         &            965    &         965    &       &            965    &          965    \\
+    R-squared                 & 0.036 & 0.371 &       & 0.035 & 0.378 \\
     \bottomrule
     \end{tabular}%
 }
 
+
 \begin{tablenotes}
       \small
       \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
-      \item Notes: Dependent variable: Natural logarithm of hourly earnings . Sample of individuals aged 18 to 65, having full-time or part-time employment, stayed in their first jobs in Germany. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, models (2) and (4) include age squared, years since migration squared, tenure squared, dummies for industries, dummies for regions of settlement and dummies for survey years.
+      \item Notes: Dependent variable: Natural logarithm of hourly earnings . Sample of individuals aged 20 to 65, having full-time or part-time employment, stayed in their first jobs after migration to Germany. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, models (2) and (4) include age squared, years since migration squared, tenure squared, dummies for industries, dummies for Federal States and dummies for survey years.
     \end{tablenotes}
 \end{table}%
 
 \begin{landscape}
-% Table generated by Excel2LaTeX from sheet '20180504 Regression'
+
+% Table generated by Excel2LaTeX from sheet '20180508 Regression'
 \begin{table}[htbp]
   \centering
   \caption{Outcome equation - Level of job complexity}
-    \begin{tabular}{p{15em}rrrrrrrrr}
+    \begin{tabular}{p{7.55em}rrrrrrrrr}
     \toprule
     \toprule
     \multicolumn{1}{r}{} & \multicolumn{4}{c}{\textbf{Self-assessed language skills}} &       & \multicolumn{4}{c}{\textbf{Linguistic distance * Age at Migration}} \\
 \cmidrule{2-5}\cmidrule{7-10}    \multicolumn{1}{r}{} & \multicolumn{1}{c}{\textit{Level 1}} & \multicolumn{1}{c}{\textit{Level 2}} & \multicolumn{1}{c}{\textit{Level 3}} & \multicolumn{1}{c}{\textit{Level 4}} &       & \multicolumn{1}{c}{\textit{Level 1}} & \multicolumn{1}{c}{\textit{Level 2}} & \multicolumn{1}{c}{\textit{Level 3}} & \multicolumn{1}{c}{\textit{Level 4}} \\
     \midrule
-    \multicolumn{1}{l}{Find job by social networks} & 0 .054** & -0.016** & -0.007* & -0.031** &       &  0.060* &  -0.017* &  -0.008 &  -0.034* \\
-    \multicolumn{1}{l}{                         } & (0.027) & (0.008) & (0.004) & (0.015) &       & (0.035) & (0.009) & (0.005) & (0.021) \\
-    Pre-migration language skills & -0.040** & 0.012** & 0.005** & 0.023** &       &  0.057*** &  -0.017*** &  -0.008*** &  -0.033*** \\
-    \multicolumn{1}{l}{                         } & (0.017) & (0.005) & (0.002) & (0.009) &       & (0.017) & (0.005) & (0.002) & (0.009) \\
-    \multicolumn{1}{l}{Pseudo-R-squared} & 0.203 & 0.203 & 0.203 & 0.203 &       & 0.203 & 0.203 & 0.203 & 0.203 \\
-    Observations &        1,149    &        1,149    &        1,149    &        1,149    &       &         1,149    &         1,149    &         1,149    &         1,149    \\
+    \multicolumn{1}{l}{\textit{Dep. Var: Level of job complexity (1/4)}} &       &       &       &       &       &       &       &       &  \\
+    \multicolumn{1}{l}{Obtain job by social networks} & 0.069** & -0.021** & -0.007** & -0.041** &       &  0.079*** &  -0.024** &  -0.008** &  -0.046*** \\
+    \multicolumn{1}{l}{                         } & (0.030) & (0.009) & (0.003) & (0.018) &       & (0.030) & (0.009) & (0.004) & (0.018) \\
+    \multicolumn{1}{l}{Pre-migration language skills} & -0.050*** & 0.015*** & 0.005** & 0.029*** &       &  0.128*** &  -0.039*** &  -0.013*** &  -0.076*** \\
+    \multicolumn{1}{l}{                         } & (0.014) & (0.005) & (0.002) & (0.008) &       & (0.038) & (0.013) & (0.005) & (0.023) \\
+    \multicolumn{1}{l}{Pseudo R-squared} & 0.215 & 0.215 & 0.215 & 0.215 &       & 0.212 & 0.212 & 0.212 & 0.212 \\
+    Observations &          1,008    &          1,008    &          1,008    &          1,008    &       &          1,008    &          1,008    &          1,008    &          1,008    \\
     \bottomrule
     \end{tabular}%
+
+
 \begin{tablenotes}
       \small
       \item Source: IAB-SOEP Migration Sample (Wave: 2013 - 2016).
-      \item Notes: Dependent variable: Level of Job complexity (1/4) . Sample of individuals aged 18 to 65, having full-time or part-time employment, stayed in their first jobs in Germany. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, all models include dummy for males, age, age squared, years since migration, years since migration squared, dummies for highest qualifications, tenure squared, dummy for establishment size, dummies for industries, dummies for regions of settlement and dummies for survey years.
+      \item Notes: Dependent variable: Level of Job complexity (1/4) . Sample of individuals aged 20 to 65, having full-time or part-time employment, stayed in their first jobs after migration to Germany. Clustered standard errors are reported in parentheses.  ***, ** and * indicate significance at the 1\%, 5\% and 10\% level, respectively. In addition to the covariates shown in the table, all models include dummy for males, age, age squared, years since migration, years since migration squared, dummies for highest qualifications, tenure squared, dummy for establishment size, dummies for industries, dummies for  Federal States and dummies for survey years.
     \end{tablenotes}
+
 \end{table}%
 
 \end{landscape}
 
 \begin{figure}
 \centering     %%% not \center
-\includegraphics[scale=1.2]{Figure7}
+\includegraphics[scale=1.2]{Figure1}
 \caption{Linguistic distance between German and other languages}
 \end{figure}
 
 \begin{figure}
 \centering     %%% not \center
-\includegraphics[scale=0.8]{Figure1}
-\caption{Linguistic distance, Language skills and the use of Social Networks to find jobs}
+\includegraphics[scale=0.6]{Figure2}
+\caption{Pre-migration language skills and the use of Social Networks to obtain jobs}
 \end{figure}
 
 \begin{figure}
 \centering     %%% not \center
-\includegraphics[scale=0.8]{Figure2}
-\caption{Language skills, the use of Social Networks to find jobs and Wages}
+\includegraphics[scale=0.6]{Figure3}
+\caption{Pre-migration language skills and Wages}
 \end{figure}
 
 \begin{figure}
 \centering     %%% not \center
-\includegraphics[scale=1.2]{Figure3}
-\caption{Total effects of language skills on wages decomposed}
-\end{figure}
-
-\begin{figure}
-\centering     %%% not \center
-\includegraphics[scale=1.2]{Figure4}
-\caption{Total effects of language skills on level of job complexity decomposed}
+\includegraphics[scale=0.6]{Figure4}
+\caption{Using social networks to obtain jobs and Labor market outcomes}
 \end{figure}
 
 \begin{figure}
