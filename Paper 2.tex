@@ -109,6 +109,7 @@ $$
 \begin{cases} Y_{i} = \alpha_{1} + \beta_{1}L_{i} + \xi_{1}X_{i} + \epsilon_{i1} (1) \\ M_{i} = \alpha_{2} + \beta_{2}L_{i} + \xi_{2}X_{i} + \epsilon_{i2} (2) \\ Y_{i} = \alpha_{3} + \beta_{3}L_{i} + \gamma M_{i} + \xi_{3}X_{i} + \epsilon_{i3} (3)
 \end{cases}
 $$
+
 in which $Y_{i}$ is the labor market outcome which can be either natural logarithm of hourly wages or the level of job complexity, $L_{i}$ is the continuous measure of German language skills at migration, $M_{i}$ is the binary mediator (the use of social network to find current jobs), $X_{i}$ contains all control variables, $\epsilon_{i}$ is the idiosyncratic error terms. Traditionally, under the LSEM framework, $\hat \beta_{3}$ measures the direct effect of language skills on labor market outcomes, and $\hat \beta_{2}\hat \gamma$ measures the mediation effect of using social network to search for jobs on labor market outcomes. The total effect $\hat \beta_{1}$ equals the sum of $\hat \beta_{3} + \hat \beta_{2}\hat \gamma$, so equation 1 is redundant. 
 
 As long as the linearity assumption holds, under the sequential ignorability and no-interaction assumption, the estimate of mediation effect based on the product of coefficients method is asymptotically consistent. However, as I have a binary mediator (using social networks to search for jobs or not) and an ordered outcome (level of job complexity in the scale from 1 to 4), the linearity assumption does not hold, and we have to apply another approach to accommodate for these non-linear relationships. This paper uses the potential outcomes framework in the spirit of Imai et al. (2010). In particular, I use probit model for equation (2) and linear regression for wages or ordered probit model for the level of job complexity in equation (3).
@@ -353,6 +354,12 @@ The paper sheds light on a potential mechanism through which pre-migration langu
 \centering     %%% not \center
 \includegraphics[scale=1.2]{Figure1}
 \caption{Linguistic distance between German and other languages}
+\end{figure}
+
+\begin{figure}
+\centering     %%% not \center
+\includegraphics[scale=1.0]{Mediationanalysis}
+\caption{Mediation analysis framework}
 \end{figure}
 
 \begin{figure}
