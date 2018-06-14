@@ -102,10 +102,10 @@
 \title[]{Coming to Germany: Pre-migration language skills, job search and labor market outcomes} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Huy Le Quang} % Your name
-%\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-%{University of Bamberg\\ % Your institution for the title page
-%\medskip
-%\large{BGPE Research Workshop}} % Your email address
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{University of Bamberg\\ % Your institution for the title page
+\medskip
+\large{BGPE Research Workshop}} % Your email address
 
 \date{07.06.2018} % Date, can be changed to a custom date
 
@@ -130,18 +130,26 @@
 
 \begin{frame}
 \frametitle{Why focus on pre-migration language skills?}
-\begin{itemize}
 
-\item 8/2007: To promote integration ability, Germany applied pre-departure requirements (\textit{formal language certificates}) to all third-country nationals coming for family reasons  
+\begin{enumerate}
+
+\item Language is a key issue in integration
+
+\begin{itemize}
+\item 8/2007: To promote integration ability, Germany requires \textit{formal language certificates} to all third-country nationals coming for family reasons  
 
 $\rightarrow$ Do people with some host-country language skills at arrival integrate better in the long-run than the ones who do not? \\
-$\rightarrow$ Should the admission of family migrants not only be grounded on the moral aspect of family life for which their language skills have no intrinsic value?
+%$\rightarrow$ Why should the admission of family migrants be based on language skills?
+\end{itemize}
 
 \item Methodological issues in previous literature:
 
-$\rightarrow$ Focus on current language skills $\rightarrow$ regression could be spurious (\textit{due to reverse causality}) \\
-$\rightarrow$ Focus on total effect $\rightarrow$  not empirically clear (1) why such an effect exist, (2) size of direct/indirect effects
+\begin{itemize}
+\item Focus on current language skills $\rightarrow$ regression could be spurious (\textit{due to reverse causality}) \\
+\item Focus on total effect $\rightarrow$  not empirically clear (1) why such an effect exist, (2) size of direct/indirect effects
 \end{itemize}
+
+\end{enumerate}
 
 \end{frame}
 
@@ -151,9 +159,8 @@ $\rightarrow$ Focus on total effect $\rightarrow$  not empirically clear (1) why
 \frametitle{What if you have better language skills at entry?}
 
 \begin{itemize}
-\item Signal a readily available human capital component and willingess to integrate
+\item Signal a readily available human capital component and willingness to integrate
 \item Complement other components of human capital earned in source countries 
-\item Choose an occupation with more interactive tasks, and eventually earn more than the ones working with manual tasks
 \item Have better access to formal job vacancy information in public media or employment agencies
 \item ...
 \end{itemize}
@@ -183,54 +190,46 @@ $\rightarrow$ Lower wages, higher mismatch and job dissatisfaction (\textit{Carl
 \frametitle{Research objectives}
 \textbf {Research question:}
 \begin{itemize}
-\item Does pre-migration language skills affect current labor market outcomes of immigrants in Germany? And how?
+\item Does pre-migration language skills affect current labor market outcomes of immigrants in Germany? 
+\item And, through which channel? 
 \end{itemize}
 
-\textbf {Contributions:}
+\textbf {Preliminary findings:}
 \begin{itemize}
-\item Propose a mechanism through which \textit{pre-migration} language skills exert the influence on \textit{current} labor market outcomes
-\item Apply non-traditional mediation analysis with less assumptions 
+\item Bad language skills increase the use of social networks to obtain jobs
+\item This, in turn, is associated with lower earnings and lower level of job complexity
+\item No significant evidence for family migrants (\textit{even they are the main subject of the language requirement}) \\
+%$\rightarrow$ Is this requirement effective for economic integration of family migrants?
 \end{itemize}
 \end{frame}
-
-%------------------------------------------------
-\begin{frame}
-
-\frametitle{Preliminary results}
-\begin{itemize}
-\item Using social networks to obtain jobs is a popular method among immigrants with bad language skills
-\item But using social network to obtain jobs associates with lower earnings and lower level of job complexity
-\item No significant evidence for family migrants (\textit{even they are the main subject of the pre-departure integration requirement})
-\end{itemize}
-
-\end{frame}
-
-
 
 %------------------------------------------------
 \section{Methodology}
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Mediation analysis}
-\begin{figure}[ht]
-        \begin{minipage}[b]{0.45\linewidth}
-            \centering
-            \includegraphics[width=\textwidth]{simple.png}
-            \caption{Simple mediation}
-            
-        \end{minipage}
-        \hspace{0.5cm}
-        \begin{minipage}[b]{0.45\linewidth}
-            \centering
-            \includegraphics[width=\textwidth]{moderated.png}
-            \caption{Moderated mediation}
-            
-        \end{minipage}
-    \end{figure}
+\frametitle{Mediation analysis 1}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{simple.png}
+\caption{Simple mediation}
+\end{figure}
 
 \end{frame}
 
+%------------------------------------------------
+\begin{frame}
+\frametitle{Mediation analysis 2}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{moderated.png}
+\caption{Moderated mediation}
+\end{figure}
+
+\end{frame}
+       
 %------------------------------------------------
 
 \begin{frame}
@@ -276,17 +275,6 @@ $$Y_{i}(l', m) \perp M_{i}(l)|L_{i}=l, X_{i}=x $$
 
 %------------------------------------------------
 
-\begin{frame}
-\frametitle{Mediation analysis - Procedure}
-\begin{figure}
-\centering
-\includegraphics[scale=0.6]{procedure.png}
-\caption{Procedure to conduct mediation analysis}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
 \section{Data}
 %------------------------------------------------
 
@@ -336,7 +324,7 @@ $\rightarrow$ Effective sample size: 1,008
 \textbf{Independent Variable}: Pre-migration language skills
 \begin{itemize}
 \item Self-assessed language skills (Speaking, Reading, Writing)
-\item PCA to predict latent variable "Language skills": $l_{i} \in L \sim N(0,1)$
+\item Principal Component Analysis to predict latent variable "Language skills": $l_{i} \in L \sim N(0,1)$
 \end{itemize}
 
 \textbf{Control Variables}
@@ -367,38 +355,12 @@ $\rightarrow$ Effective sample size: 1,008
 %---------------------------------------------------------
 
 \begin{frame}
-\frametitle{Language skills and earnings}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.7]{LS_earnings.png}
-  \caption*{Better language skills associates with higher earnings}
-\end{figure}
-
-\end{frame}
-
-%---------------------------------------------------------
-
-\begin{frame}
-\frametitle{Language skills and level of job complexity}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.7]{LS_level.png}
-  \caption*{Better language skills associates with higher levels of job complexity}
-\end{figure}
-
-\end{frame}
-
-%---------------------------------------------------------
-
-\begin{frame}
 \frametitle{Language skills and use social networks to obtain jobs}
 
 \begin{figure}
 \centering
 \includegraphics[scale = 0.7]{LS_SN.png}
-  \caption*{Better language skills associates with lower probability of using social networks to obtain jobs}
+  \caption*{Better language skills correlate with lower probability of using social networks to obtain jobs}
 \end{figure}
 
 \end{frame}
@@ -406,12 +368,12 @@ $\rightarrow$ Effective sample size: 1,008
 %---------------------------------------------------------
 
 \begin{frame}
-\frametitle{Use social networks to obtain jobs and earnings}
+\frametitle{Job finding method and earnings}
 
 \begin{figure}
 \centering
-\includegraphics[scale = 0.7]{SN_earnings.png}
-  \caption*{Using social networks to obtain jobs associates with lower earnings}
+\includegraphics[scale = 0.8]{SN_earnings3.png}
+  \caption*{Using social networks to obtain jobs correlates with lower earnings}
 \end{figure}
 
 \end{frame}
@@ -419,12 +381,12 @@ $\rightarrow$ Effective sample size: 1,008
 %---------------------------------------------------------
 
 \begin{frame}
-\frametitle{Use social networks to obtain jobs and level of job complexity}
+\frametitle{Job finding method and level of job complexity}
 
 \begin{figure}
 \centering
 \includegraphics[scale = 0.7]{SN_level.png}
-  \caption*{Using social networks to obtain jobs associates with lower level of job complexity}
+  \caption*{Using social networks to obtain jobs correlates with lower level of job complexity}
 \end{figure}
 
 \end{frame}
@@ -478,7 +440,20 @@ $\rightarrow$ Effective sample size: 1,008
 
 \end{frame}
 
+
 %---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Effect size - Earnings}
+\begin{figure}
+\centering
+\includegraphics[scale = 0.4]{size_earnings.png}
+  \caption{Effect size - Outcome: Earnings}
+\caption*{Note: Non-parametric bootstrap 95\%CIs, Simulations = 1,000}
+\end{figure}
+\end{frame}
+
+%-------------------------------------------------------
 
 \begin{frame}
 \frametitle{Empirical result - Level of job complexity}
@@ -518,17 +493,6 @@ $\rightarrow$ Effective sample size: 1,008
 \end{frame}
 
 %--------------------------------------------------------
-\begin{frame}
-\frametitle{Effect size - Earnings}
-\begin{figure}
-\centering
-\includegraphics[scale = 0.4]{size_earnings.png}
-  \caption{Effect size - Outcome: Earnings}
-\caption*{Note: Non-parametric bootstrap 95\%CIs, Simulations = 1,000}
-\end{figure}
-\end{frame}
-
-%-------------------------------------------------------
 
 \begin{frame}
 \frametitle{Effect size - Level of job complexity}
@@ -564,14 +528,14 @@ $\rightarrow$ Effective sample size: 1,008
 
 
 \begin{itemize}
-\item Significant evidence only for Labor migrants
-\item No significant evidence for Family migrants and migrants of humanitarian reasons
+\item Significant evidence only for labor migrants
+\item No significant evidence for family and humanitarian migrants
 \end{itemize}
 
 \textbf{Possible explanations:}
 \begin{itemize}
-\item Language skills required by the Residence Act is only at the basic level (A1)
-\item Job search duration of family migrants and migrants of humanitarian reasons are longer than of labor migrants \\ $\rightarrow$ Pre-migration language skills different from skills at the time of starting the job
+\item Language skills required by the law is only at the basic level (A1)
+\item Job search duration of family and humanitarian migrants are longer than of labor migrants \\ $\rightarrow$ Pre-migration language skills different from skills at the time of starting the job
 \end{itemize}
 
 \end{frame}
@@ -583,11 +547,11 @@ $\rightarrow$ Effective sample size: 1,008
 \begin{frame}
 \frametitle{Conclusions}
 \begin{itemize}
-\item Propose a mechanism through which \textit{pre-migration} language skills affect \textit{current} labor market outcomes
-\item Using social networks to obtain jobs is a popular method among immigrants with bad language skills
-\item But using social network to obtain jobs associates with lower \textbf{Earnings} and lower \textbf{Level of job complexity}
-\item No significant evidence for family migrants (\textit{even they are the main subject of pre-departure integration requirement}) \\
-$\rightarrow$ Pre-migration language skill requirement is a migration restriction instrument or an integration instrument?
+\item \textit{Pre-migration} language skills affect \textit{current} labor market outcomes through the choice of job finding methods
+\item Bad language skills increase the use of informal social networks to obtain jobs
+\item But using social network to obtain jobs is associated with lower \textbf{Earnings} and lower \textbf{Level of job complexity}
+\item No significant evidence for family migrants (\textit{even they are the main subject of language requirement}) \\
+$\rightarrow$ This requirement is a migration restriction or an integration instrument?
 \end{itemize}
 
 \end{frame}
@@ -600,6 +564,42 @@ $\rightarrow$ Pre-migration language skill requirement is a migration restrictio
 \end{frame}
 
 %------------------------------------------------
+\begin{frame}
+\frametitle{Mediation analysis - Procedure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{procedure.png}
+\caption{Procedure to conduct mediation analysis}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Language skills and earnings}
+
+\begin{figure}
+\centering
+\includegraphics[scale = 0.7]{LS_earnings.png}
+  \caption*{Better language skills correlate with higher earnings}
+\end{figure}
+
+\end{frame}
+
+%---------------------------------------------------------
+
+\begin{frame}
+\frametitle{Language skills and level of job complexity}
+
+\begin{figure}
+\centering
+\includegraphics[scale = 0.7]{LS_level.png}
+  \caption*{Better language skills correlate with higher levels of job complexity}
+\end{figure}
+
+\end{frame}
+
+%---------------------------------------------------------
+
 \begin{frame}
 \frametitle{Sensitivity analysis - Earnings}
 \begin{figure}
