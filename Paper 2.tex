@@ -175,12 +175,11 @@ The linguistic distance acts as a moderator of the model, in which it can affect
 
 \section{Empirical strategies}
 
-This section presents the methodology to investigate the impact of pre-migration language skills of immigrants on (1) using social network to find the current jobs and (2) contemporary labor market success. I use the potential outcome framework in the spirit of Imai et al. (2010) to carry out the empirical analysis. This approach includes three steps: (1) fit the mediation and outcome equations, (2) use non-parametric bootstrapping simulations to calculate the magnitude of the mediation and direct effects, and (3) conduct sensitivity analysis to see how sensitive the effect sizes to the violations of the sequential ignorability assumptions. Figure 3 and 4 illustrate the theoretical framework of a simple mediation and a moderated mediation analysis, respectively.
+This section presents the methodology to investigate the impact of pre-migration language skills of immigrants on (1) using social network to find the current jobs and (2) contemporary labor market success. I use the potential outcome framework in the spirit of Imai et al. (2010) to carry out the empirical analysis. This approach includes three steps: (1) fit the mediation and outcome equations, (2) use non-parametric bootstrapping simulations to calculate the magnitude of the indirect and direct effects, and (3) conduct sensitivity analysis to see how sensitive the effect sizes to the violations of the sequential ignorability assumptions. Figure 3 illustrates the theoretical framework of this mediation analysis.
 
 \begin{center}
-[INSERT FIGURE 3 and 4 ABOUT HERE]
+[INSERT FIGURE 3 ABOUT HERE]
 \end{center}
-
 
 Traditionally, the mediation analysis is often conducted under the framework of a linear structural equation modelling (LSEM) (MacKinnon, 2008). Consider the following set of equations:
 $$
@@ -188,11 +187,11 @@ $$
 \end{cases}
 $$
 
-in which $Y_{i}$ is the labor market outcome, $L_{i}$ is the continuous measure of German language skills at migration, $M_{i}$ is the binary mediator (the use of social network to obtain current jobs), $X_{i}$ contains all control variables, $\epsilon_{i}$ is the idiosyncratic error terms. Under the LSEM framework, $\hat \beta_{3}$ measures the direct effect of language skills on labor market outcomes, and the product of two coefficients $\hat \beta_{2}*\hat \gamma$ measures the mediation effect of using social network to obtain jobs on labor market outcomes. The total effect $\hat \beta_{1}$ equals the sum of $\hat \beta_{3} + \hat \beta_{2}\hat \gamma$. As long as the linearity assumption holds, under the sequential ignorability and no-interaction assumption, the estimate of mediation effect based on the product of coefficients method is asymptotically consistent. However, Imai et al., (2010) show that when this linearity assumption does not hold, the magnitude of effects is not consistently estimated. 
+in which $Y_{i}$ is the labor market outcome, $L_{i}$ is the continuous measure of German language skills at migration, $M_{i}$ is the binary mediator (the use of social network to obtain current jobs), $X_{i}$ contains all control variables, $\epsilon_{i}$ is the idiosyncratic error terms. Under the LSEM framework, $\hat \beta_{3}$ measures the direct effect of language skills on labor market outcomes, and the product of two coefficients $\hat \beta_{2}*\hat \gamma$ measures the indirect effect of using social network to obtain jobs on labor market outcomes. The total effect $\hat \beta_{1}$ equals the sum of $\hat \beta_{3} + \hat \beta_{2}\hat \gamma$. As long as the linearity assumption holds, under the sequential ignorability and no-interaction assumption, the estimate of mediation effect based on the product of coefficients method is asymptotically consistent. However, Imai et al., (2010) show that when this linearity assumption does not hold, the magnitude of effects is not consistently estimated. 
 
-On the contrary, the potential outcome framework used in this paper does not rely on any functional form assumption, and thus, is more flexibile in modeling non-linear relationships, in particular, I have a binary mediator (using social networks to search for jobs or not) and an ordered outcome (level of job complexity in the scale from 1 to 4)
+On the contrary, the potential outcome framework used in this paper does not rely on any functional form assumption, and thus, is more flexible in modeling non-linear relationships, as there are a binary mediator (using social networks to search for jobs or not) and an ordered outcome (level of job complexity in the scale from 1 to 4) in this setting.
 
-In the first step, I estimate a probit model for the mediation equation. For the outcome equation, I estimate a linear regression for wages or an ordered probit model for the level of job complexity, as following.
+In the first step, I estimate a probit model for the mediation equation. For the outcome equation, I estimate a linear regression for wages and an ordered probit model for the level of job complexity, as following.
 
 \begin{enumerate}
 
@@ -228,14 +227,18 @@ $$\delta_{i} = Y_{i}(l, M_{i}(l_{1})) - Y_{i}(l, M_{i}(l_{0}))$$
 \textbf{Direct effect}
 $$\xi_{i} = Y_{i}(l_{1}, M_{i}(l)) - Y_{i}(l_{0}, M_{i}(l))$$
 
-In the final step, I conduct the sensitivity analysis to see how sensitive are the effect sizes to the violation of the sequential ignorability assumption. The sequential ignorability assumption requires two conditions to be satisfied sequentially. First, given the observed pre-treatment confounders, the treatment assignment is assumed to be ignorable. As an observational study, this part of the assumption is not satisfied because individuals may self--select into different levels of language proficiency. Second, the mediator is assumed ignorable given the observed treatment and pre--treatment confounders. This part of assumption may also not hold because the use of social network to search for job is not randomly assigned by the researcher. Mathematically speaking, the sequential ignorability is presented as follows.
+Indirect effect is.... Direct effect is.... (Pearl, 2010).
+
+In the third step, I conduct the sensitivity analysis to see how sensitive are the effect sizes to the violation of the sequential ignorability assumption. The sequential ignorability assumption requires two conditions to be satisfied sequentially. First, given the observed pre-treatment confounders, the treatment assignment is assumed to be ignorable. As an observational study, this part of the assumption is not satisfied because individuals may self--select into different levels of language proficiency. Second, the mediator is assumed ignorable given the observed treatment and pre--treatment confounders. This part of assumption may also not hold because the use of social network to search for job is not randomly assigned by the researcher. Mathematically speaking, the sequential ignorability is presented as follows.
 
 $$\left \{Y_{i}(l', m), M_{i}(l)\right \} \perp L_{i}|X_{i}=x, $$
 $$Y_{i}(l', m) \perp M_{i}(l)|L_{i}=l, X_{i}=x $$
 
 If this assumption is satisfied, the correlation $\rho$ between the error term in the mediation equation and that in the outcome equation will equal zero. We want to check when it it not the case, how sensitive are the effect sizes to this violation.
 
-The pre-migration language fluency is not a random variable because people select themselves to different levels of proficiency based on their exposure to the language, their economic expectation and their efficiency to learn the language (Chiswick and Miller, 2011; Isphording and Otten, 2014). Therefore, I conduct the moderated mediation model in which I explicitly interact the linguistic distance (represents the efficiency to learn the German language) with the pre-migration language skills and the use of social networks to obtain jobs. 
+The pre-migration language fluency is not a random variable because people select themselves to different levels of proficiency based on their exposure to the language, their economic expectation and their efficiency to learn the language (Chiswick and Miller, 2011; Isphording and Otten, 2014). Therefore, I interact the linguistic distance (represents the efficiency to learn the German language) with the pre-migration language skills to model the non-randomness of the language skills. 
+
+I do not use the linguistic distance as an instrumental variable because there is an increasing number of empirical evidence indicating that the linguistic distance may not satify the exogenous assumption. In particular, Adsera and Pytlikova (2015) investigate the relevance of linguistic proximity between origin and destination countries and find that the emigration rates are substantially higher among countries whose languages are close to each other. In other words, linguistic similarity ''encourages'' people whose mother tongues are close to German (from Austria, Switzerland, Luxembourg, or the Netherlands) to migrate to Germany. On the contrary, people whose mother tongues are far away from German (Africans or Asians) must have additional motivation to overcome the language barrier to come here. Further, these two groups of people are also different culturally. Therefore, it is not clear whether the observed difference in labor market outcomes of these two groups are solely due to their language skills (predicted by the linguistic distance) or due to any other unobserved characteristics.
 
 \section{Findings and Discussion}
 
